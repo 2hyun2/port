@@ -61,18 +61,42 @@ body {
 
 nav { position: sticky; top: 0; z-index: 50; height: 2rem; width: clamp(0px, 100%, var(--max-wd)); text-align: right; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(0.25rem); border-bottom: 1px solid #ddd; padding: 0.25rem 0; }
 nav .logo { font-size: 1.5rem; color: #f5f5f5; font-weight: 700; }
-nav > ul { display: flex; gap: 1rem; align-items: center; }
+nav > ul { display: inline-flex; gap: 1rem; align-items: center; }
 
-.intro-title { font-size: 1.25rem; font-weight: 600; text-align: center; background-color: var(--bg2); border-radius: 0.5rem; padding: 0.25rem; margin: 0.5rem auto; }
+section { }
+section + section { margin: 4rem 0 0; }
 
-.intro-content { border: 1px solid var(--stroke4); border-radius: 0.5rem; }
+.section-title { font-size: 1.25rem; font-weight: 600; text-align: center; background-color: var(--bg2); border-radius: 0.5rem; padding: 0.25rem; margin: 1rem auto; }
+
+article { border: 2px solid var(--stroke4); border-radius: 0.5rem; overflow: hidden; padding: 1rem 2rem; }
+article.non-padding { padding: 0; }
+
+
+.intro-content {  }
 .intro-content > div { padding: 1rem 2rem; }
 
-.intro-content .intro-user { display: flex; gap: 1rem; align-items: flex-start; background-color: var(--bg2); }
+.intro-content .intro-user { display: flex; gap: 1rem; align-items: flex-start; background-color: var(--bg3); }
 .intro-content .intro-user .thumbnail { width: 7rem; aspect-ratio: 1/1; border: 3px solid #fff; border-radius: 50%; background-color: #00A3FF; }
 .intro-content .intro-user .desc { }
 .intro-content .intro-user .desc .name { font-size: 1.75rem; font-weight: 700; }
-.intro-content .intro-user .desc .job { font-size: 1.25rem; color: var(--typo5); font-weight: 400; }
+.intro-content .intro-user .desc .job { font-size: 1.25rem; color: var(--typo5); font-weight: 400; margin-bottom: 0.5rem; }
 .intro-content .intro-user .desc .contact { display: flex; gap: 1rem; }
-.intro-content .intro-user .desc .contact a { display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; }
-.intro-content .intro-user .desc .contact a svg { width: 0.75rem; }
+.intro-content .intro-user .desc .contact a { display: flex; gap: 0.25rem; align-items: center; font-size: 0.8rem; line-height: 1; }
+.intro-content .intro-user .desc .contact a svg { width: 0.8rem; }
+
+.intro-content .intro-introduce > ul { display: flex; flex-wrap: wrap; gap: 1rem; }
+.intro-content .intro-introduce > ul li { flex: 0 1 calc((100% - 2rem)/3); font-size: 0.8rem; }
+.intro-content .intro-introduce > ul li h5 { display: block; color: var(--typo6);}
+.intro-content .intro-introduce > ul li p { }
+.intro-content .intro-introduce > ul li.mind { flex: 1 1 100%; font-size: 1rem; font-weight: 500; text-align: center; }
+
+#experience { position: relative; overflow: hidden; }
+#experience article { position: relative; width: calc(100% - 6rem); margin-left: auto; overflow: initial; }
+#experience article + article { margin-top: 2rem; }
+#experience article::before { position: absolute; content: ''; top: 0; left: -3rem; bottom: -3rem; width: 1px; background-color: var(--stroke4); }
+#experience article::after { position: absolute; content: ''; top: 0; left: -3rem; z-index: 10; width: 4rem; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #fff; font-weight: 500; text-align: center; background-color: var(--pri6); border: 1px solid var(--stroke4); border-radius: 50%; transform: translate(-50%, -0.5rem); }
+#experience article.now::after { content: '현재'; background-color: var(--pri1); }
+#experience article.past::after { content: '2022 ~ 2024'; background-color: var(--pri2); }
+#experience article.na::after { content: 'N/A'; background-color: var(--pri3); }
+
+#experience article .company { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;  }

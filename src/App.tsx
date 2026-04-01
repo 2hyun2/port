@@ -22,8 +22,8 @@ const App = () => {
       </nav>
 
       <section id="intro">
-        <div className="intro-title">나는 로또 1등이여도 일이 재밌을거야</div>
-        <div className="intro-content">
+        <h2 className="section-title">나는 로또 1등이여도 일이 재밌을거야</h2>
+        <article className="intro-content non-padding">
           <div className="intro-user">
             <div className="thumbnail"><img src="" alt="" /></div>
             <div className="desc">
@@ -45,9 +45,56 @@ const App = () => {
               </ul>
             </div>
           </div>
-        </div>
+
+          <div className="intro-introduce">
+            <ul>
+              <li>
+                <h5>생년월일</h5>
+                <p>1997.02.08</p>
+              </li>
+              <li>
+                <h5>거주지</h5>
+                <p>서울시 관악구 중앙동</p>
+              </li>
+              <li>
+                <h5>취미</h5>
+                <p>배드민턴, 유튜브, 게임</p>
+              </li>
+              <li>
+                <h5>학력</h5>
+                <p>서울공업고등학교 졸업 <br />시스템 자동화과</p>
+              </li>
+              <li>
+                <h5>병역</h5>
+                <p>군필 (2016. 02 ~ 2018. 12)</p>
+              </li>
+              <li>
+                <h5>사회 경험</h5>
+                <p>8년 9개월 (2026.04.01 기준)</p>
+              </li>
+              <li className="mind">사용자를 위한, 나를 위한, 질문을 계속 하며 소통을 즐겨하며 해결합니다.</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
+      <section id="experience">
+        <h2 className="section-title">개발 경력 (만 3년, 2026.04.01 기준)</h2>
+        <article className='now'>
+          <div className="company">
+            <a href='https://medistorage.kr/' target='blank'>㈜비즈앤씨</a>
+            <p className="date">2025.09.15 ~ 현재</p>
+            <p className="desc">의료용품을 전문으로 유통하는 유통 플랫폼 기업</p>
+          </div>
+        </article>
+        <article className='past'>
+          <div className="company">
+            <a href='https://www.prix.co.kr/' target='blank'>㈜웹컴퍼니</a>
+            <p className="date">2022. 07 ~ 2024. 11</p>
+            <p className="desc">ASP, PHP를 기반으로 작업하는 웹에이전시</p>
+          </div>
+        </article>
+      </section>
 
     </>
   );
