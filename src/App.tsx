@@ -78,7 +78,7 @@ const App = () => {
         </article>
       </section>
 
-      <section id="experience">
+      <section id="work">
         <h2 className="section-title">개발 경력 (만 3년, 2026.04.01 기준)</h2>
         <article className='now'>
           <div className="company">
@@ -86,6 +86,28 @@ const App = () => {
             <p className="date">2025.09.15 ~ 현재</p>
             <p className="desc">의료용품을 전문으로 유통하는 유통 플랫폼 기업</p>
           </div>
+          {PORTFOLIO_DATA.categories.map((category, index) => (
+            <details open key={index}>
+              <summary>
+                <h3 className="details-title">{category.title}</h3>
+                <h4 className="details-sub-title">{category.description}</h4>
+              </summary>
+
+              {category.projects.map((obj, pIndex) => ( // 상위 index와 겹치지 않게 pIndex로 명명 권장
+                <details className='details-obj' key={pIndex}>
+                  <summary>
+                    <h4 className="obj-title">{obj.title}</h4>
+                    <h5 className="obj-sub-title">{obj.summary}</h5>
+                  </summary>
+                  <ul className='details-desc'>
+                    {obj.details.map((desc, dIndex) => (
+                      <li key={dIndex}>{desc}</li>
+                    ))}
+                  </ul>
+                </details>
+              ))}
+            </details>
+          ))}
         </article>
         <article className='past'>
           <div className="company">

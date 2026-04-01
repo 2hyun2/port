@@ -13,6 +13,8 @@ body {
   color: #222;
 }
 
+* { word-break: keep-all; }
+
 :root {
         --max-wd: 48rem;
 
@@ -55,15 +57,24 @@ body {
         --status-b1: #57A4FF;
         --status-b2: #57A4FFCC;
         --status-b3: #DAF2FF;
+
+      --bg-depth-1: #ffffff;
+      --bg-depth-2: #f8f9fa;
+      --bg-depth-3: #f1f3f5;
+      
+      --point-color: #2563eb; 
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --stroke: #e2e8f0;
 }
 
-#root { width: clamp(0px, 100%, var(--max-wd)); margin: 0 auto; }
+#root { width: clamp(0px, 100%, var(--max-wd)); padding: 0 1rem 4rem; margin: 0 auto 0 0; }
 
 nav { position: sticky; top: 0; z-index: 50; height: 2rem; width: clamp(0px, 100%, var(--max-wd)); text-align: right; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(0.25rem); border-bottom: 1px solid #ddd; padding: 0.25rem 0; }
 nav .logo { font-size: 1.5rem; color: #f5f5f5; font-weight: 700; }
 nav > ul { display: inline-flex; gap: 1rem; align-items: center; }
 
-section { }
+section { scroll-margin-top: 2rem; }
 section + section { margin: 4rem 0 0; }
 
 .section-title { font-size: 1.25rem; font-weight: 600; text-align: center; background-color: var(--bg2); border-radius: 0.5rem; padding: 0.25rem; margin: 1rem auto; }
@@ -90,17 +101,61 @@ article.non-padding { padding: 0; }
 .intro-content .intro-introduce > ul li p { }
 .intro-content .intro-introduce > ul li.mind { flex: 1 1 100%; font-size: 1rem; font-weight: 500; text-align: center; }
 
-#experience { position: relative; overflow: hidden; }
-#experience article { position: relative; width: calc(100% - 6rem); margin-left: auto; overflow: initial; }
-#experience article + article { margin-top: 2rem; }
-#experience article::before { position: absolute; content: ''; top: 0; left: -3rem; bottom: -3rem; width: 1px; background-color: var(--stroke4); }
-#experience article::after { position: absolute; content: ''; top: 0; left: -3rem; z-index: 10; width: 4rem; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #fff; font-weight: 500; text-align: center; background-color: var(--pri6); border: 1px solid var(--stroke4); border-radius: 50%; transform: translate(-50%, -0.5rem); }
-#experience article.now::after { content: '현재'; background-color: var(--pri1); }
-#experience article.past::after { content: '2022 ~ 2024'; background-color: var(--pri2); }
-#experience article.na::after { content: 'N/A'; background-color: var(--pri3); }
+#work { position: relative; overflow: hidden; }
+#work article { position: relative; width: calc(100% - 6rem); margin-left: auto; overflow: initial; }
+#work article + article { margin-top: 2rem; }
+#work article::before { position: absolute; content: ''; top: 0; left: -3rem; bottom: -3rem; width: 1px; background-color: var(--stroke4); }
+#work article::after { position: absolute; content: ''; top: 0; left: -3rem; z-index: 10; width: 4rem; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #fff; font-weight: 500; text-align: center; background-color: var(--pri6); border: 1px solid var(--stroke4); border-radius: 50%; transform: translate(-50%, -0.5rem); }
+#work article.now::after { content: '현재'; background-color: var(--pri1); }
+#work article.past::after { content: '2022 ~ 2024'; background-color: var(--pri2); }
+#work article.na::after { content: 'N/A'; background-color: var(--pri3); }
 
-#experience article .company { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: 90%; }
-#experience article .company .title { color: var(--pri1); font-size: 1rem; font-weight: 600; transition: all ease 0.3s; }
-#experience article .company .title:hover { color: var(--pri3); }
-#experience article .company .date { color: var(--pri4); font-weight: 600; }
-#experience article .company .desc { width: 100%; }
+#work article .company { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: 90%; }
+#work article .company .title { color: var(--pri1); font-size: 1rem; font-weight: 600; transition: all ease 0.3s; }
+#work article .company .title:hover { color: var(--pri3); }
+#work article .company .date { color: var(--pri4); font-weight: 600; }
+#work article .company .desc { width: 100%; }
+
+/* details { display: block; color: var(--typo4); background-color: var(--status-b3); padding: 0 0 0.5rem; margin: 1rem; margin-right: 0; transition: all ease 0.3s; }
+details summary { position: relative; padding: 0.5rem 2rem 0.5rem 1rem; cursor: pointer; }
+details summary::after { position: absolute; content: ''; top: 50%; right: 1rem; width: 0.5rem; height: 0.5rem; border-right: 2px solid #333; border-bottom: 2px solid #333; transform: translateY(-50%) rotate(-135deg); transition: transform 0.3s ease; }
+
+details[open] > details + details { margin-top: 1rem; }
+details[open] > summary::after { transform: translateY(-50%) rotate(45deg); }
+
+.details-desc { display: flex; flex-direction: column; gap: 0.25rem; background-color: #fff; padding: 0.5rem 1rem; }
+.details-desc li { position: relative; font-size: 1rem; color: var(--typo2); padding: 0 0 0 0.8rem; }
+.details-desc li::before { position: absolute; content: ''; top: calc(0.5rem * 1.4); left: 0; display: inline-block; width: 0.4rem; aspect-ratio: 1/1; vertical-align: middle; background-color: var(--typo2); border-radius: 50%; transform: translateY(-50%); }
+
+.details-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.25rem;}
+.details-sub-title { font-size: 1rem; color: var(--typo5); font-weight: 500; }
+.obj-title { font-size: 1.125rem; color: #fff; font-weight: 700; margin: 0 0 0.25rem;}
+.obj-sub-title { font-size: 1rem; color: #eee; font-weight: 500; } */
+
+summary::-webkit-details-marker { display: none; }
+summary { list-style: none; } 
+
+#work details { background-color: var(--bg-depth-2); border: 1px solid var(--stroke); border-radius: 8px; padding: 0; margin: 1rem 0; overflow: hidden; }
+#work details summary {  position: relative; background-color: #fff; padding: 0.75rem 2rem 0.75rem 1rem; cursor: pointer; }
+#work details summary::after { position: absolute; content: ''; top: 50%; right: 1rem; width: 0.5rem; height: 0.5rem; border-right: 2px solid var(--point-color); border-bottom: 2px solid var(--point-color); transform: translateY(-50%) rotate(-135deg); transition: transform 0.3s ease; }
+#work details[open] > summary::after { transform: translateY(-50%) rotate(45deg); }
+
+#work details details { margin: 1rem 0 1rem 1rem; }
+
+details[open] > details.details-obj { 
+  background-color: var(--bg-depth-3); 
+  margin: 0.75rem 1.5rem; /* 좌우 여백을 주어 공중에 떠 있는 느낌 부여 */
+  border-radius: 6px;
+  border: none;
+}
+
+details.details-obj summary { background-color: var(--bg-depth-1);  border-bottom: none; padding: 1rem; }
+
+.details-desc { background-color: var(--bg-depth-3); padding: 1rem; }
+.details-desc li { position: relative; font-size: 1rem; color: var(--typo2); padding: 0 0 0 0.8rem; }
+.details-desc li::before { position: absolute; content: ''; top: calc(0.5rem * 1.4); left: 0; display: inline-block; width: 0.4rem; aspect-ratio: 1/1; vertical-align: middle; background-color: var(--typo2); border-radius: 50%; transform: translateY(-50%); }
+
+.details-title { color: var(--text-main); font-weight: 700; }
+.details-sub-title { color: var(--text-sub); }
+.obj-title { color: var(--point-color); font-weight: 700; }
+.obj-sub-title { color: var(--text-sub); font-size: 0.9rem; }
