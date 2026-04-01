@@ -82,14 +82,14 @@ const App = () => {
         <h2 className="section-title">개발 경력 (만 3년, 2026.04.01 기준)</h2>
         <article className='now'>
           <div className="company">
-            <a href='https://medistorage.kr/' target='blank'>㈜비즈앤씨</a>
+            <a href='https://medistorage.kr/' target='blank' className='title'>㈜비즈앤씨</a>
             <p className="date">2025.09.15 ~ 현재</p>
             <p className="desc">의료용품을 전문으로 유통하는 유통 플랫폼 기업</p>
           </div>
         </article>
         <article className='past'>
           <div className="company">
-            <a href='https://www.prix.co.kr/' target='blank'>㈜웹컴퍼니</a>
+            <a href='https://www.prix.co.kr/' target='blank' className='title'>㈜웹컴퍼니</a>
             <p className="date">2022. 07 ~ 2024. 11</p>
             <p className="desc">ASP, PHP를 기반으로 작업하는 웹에이전시</p>
           </div>

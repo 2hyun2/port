@@ -99,4 +99,8 @@ article.non-padding { padding: 0; }
 #experience article.past::after { content: '2022 ~ 2024'; background-color: var(--pri2); }
 #experience article.na::after { content: 'N/A'; background-color: var(--pri3); }
 
-#experience article .company { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;  }
+#experience article .company { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: 90%; }
+#experience article .company .title { color: var(--pri1); font-size: 1rem; font-weight: 600; transition: all ease 0.3s; }
+#experience article .company .title:hover { color: var(--pri3); }
+#experience article .company .date { color: var(--pri4); font-weight: 600; }
+#experience article .company .desc { width: 100%; }
