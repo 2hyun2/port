@@ -101,3 +101,53 @@ export const PORTFOLIO_DATA = {
     }
   ]
 };
+
+export const PORTFOLIO_DATA2 = {
+  publishing: [
+    {
+      title: "DNL Logis",
+      href: "https://dnl.dnllogis.com/",
+      description: "표면으로 보이는 랜딩 페이지보다는 내부의 웹/앱을 위주로 작업하였으며, 다양한 입력값에 따른 각개 다른 결과값을 유도하였습니다.",
+      src: "/images/dnl.png",
+      details: [
+        "",
+      ],
+    },
+    {
+      title: "삼성중공업 ",
+      href: "https://www.samsungshi.com/",
+      description: "Aspx ",
+      src: "/images/samsung.jpg",
+      details: [
+        "",
+      ],
+    },
+    {
+      title: "INITION",
+      href: "https://inition.kr/",
+      description: "",
+      src: "/images/inition.svg",
+      details: [
+        "",
+      ],
+    },
+    {
+      title: "대한사회복지회",
+      href: "https://kws.or.kr/",
+      description: "",
+      src: "/images/kws.jpg",
+      details: [
+        "",
+      ],
+    },
+    {
+      title: "daycus",
+      href: "http://www.daycus.com/",
+      description: "",
+      src: "/images/daycus.png",
+      details: [
+        "",
+      ],
+    },
+  ]
+}

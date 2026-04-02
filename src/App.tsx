@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { PORTFOLIO_DATA } from './constants/data';
+// import { useState, useEffect, useRef } from 'react';
+import { PORTFOLIO_DATA, PORTFOLIO_DATA2 } from './constants/data';
 
 const App = () => {
 
@@ -115,6 +115,22 @@ const App = () => {
             <p className="date">2022. 07 ~ 2024. 11</p>
             <p className="desc">ASP, PHP를 기반으로 작업하는 웹에이전시</p>
           </div>
+          <ul className="past-project">
+          {
+            PORTFOLIO_DATA2.publishing.map((item, index) => (
+              <li key={index}>
+                <div className="thumbnail">
+                  <a href={item.href}><img src={item.src} alt={item.title} /></a>
+                </div>
+                <ul className="past-project-details">
+                  {item.details.map((detail, pIndex) => (
+                    <li key={pIndex}>{detail}</li>
+                  ))}
+                </ul>
+              </li>
+            ))
+          }
+          </ul>
         </article>
       </section>
 
