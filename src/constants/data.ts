@@ -11,7 +11,7 @@ export const PORTFOLIO_DATA = {
           details: [
             "new Map() 자료구조를 이용한 데이터 탐색 성능 최적화",
             "부모-자식 관계를 new Map 데이터를 활용해 재귀형 Root 객체로 변환",
-            "createDocumentFragment를 활용한 렌더링 선능 최적화",
+            "createDocumentFragment를 활용한 렌더링 성능 최적화",
             "e.target.closest() 를 이용한 이벤트 위임 및 addEventListener 메모리 최소화",
           ]
         },
@@ -107,7 +107,7 @@ export const PORTFOLIO_DATA2 = {
     {
       title: "DNL Logis",
       href: "https://dnl.dnllogis.com/",
-      description: "표면으로 보이는 랜딩 페이지보다는 내부의 웹/앱을 위주로 작업하였으며, 다양한 입력값에 따른 각개 다른 결과값을 유도",
+      description: "복잡한 물류/정산 데이터의 시각화 및 UX 최적화",
       src: "/images/dnl.png",
       details: [
         {
@@ -127,7 +127,7 @@ export const PORTFOLIO_DATA2 = {
     {
       title: "삼성중공업 ",
       href: "https://www.samsungshi.com/",
-      description: ".aspx의 폐쇄된 서버에서의 작업 많은 제약 속에서의 최적의 결과물",
+      description: "레거시(.aspx) 환경에서의 웹 표준 및 호환성 확보",
       src: "/images/samsung.jpg",
       details: [
         {

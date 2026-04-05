@@ -115,22 +115,35 @@ const App = () => {
             <p className="date">2022. 07 ~ 2024. 11</p>
             <p className="desc">ASP, PHP를 기반으로 작업하는 웹에이전시</p>
           </div>
-          <ul className="past-project">
-          {
-            PORTFOLIO_DATA2.publishing.map((item, index) => (
-              <li key={index}>
-                <div className="thumbnail">
-                  <a href={item.href}><img src={item.src} alt={item.title} /></a>
-                </div>
-                <ul className="past-project-details">
-                  {item.details.map((detail, pIndex) => (
-                    <li key={pIndex}>{detail}</li>
-                  ))}
-                </ul>
-              </li>
-            ))
-          }
-          </ul>
+            <details open>
+              <summary>
+                  <h3 className="details-title">Frontend & Publishing</h3>
+                  <h4 className="details-sub-title">에이전시 재직 당시 수행한 50여 개 이상의 프로젝트 중 주요 구축 사례입니다.</h4>
+              </summary>
+              {
+                PORTFOLIO_DATA2.publishing.map((obj, index) => (
+                <details className='details-obj' key={index}>
+                  <summary>
+                    <div className="flex gap-4 items-center">
+                      <div className="">
+                        <h4 className="obj-title">{obj.title}</h4>
+                        <h5 className="obj-sub-title">{obj.description}</h5>
+                      </div>
+                      <a className='obj-href' href={obj.href} target='blank'>바로가기</a>
+                    </div>
+                  </summary>
+                  <ul className='details-desc'>
+                    {obj.details.map((desc, dIndex) => (
+                      <li key={dIndex}>
+                        <p className='details-desc-title'>{desc.title}</p>
+                        <span className='details-desc-sub'>{desc.desc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+                ))
+              }
+            </details>
         </article>
       </section>
 
