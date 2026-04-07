@@ -149,6 +149,7 @@ details[open] > summary::after { transform: translateY(-50%) rotate(45deg); }
 summary::-webkit-details-marker { display: none; }
 summary { list-style: none; } 
 
+#work article > details { border-radius: 0.5rem; }
 #work details { background-color: var(--bg-depth-2); border: 1px solid var(--stroke); border-radius: 0.5rem 0 0 0.5rem; padding: 0; margin: 1rem 0; overflow: hidden; }
 #work details summary {  position: relative; background-color: #fff; padding: 0.75rem 2rem 0.75rem 1rem; cursor: pointer; }
 #work details summary::after { position: absolute; content: ''; top: 50%; right: 1rem; width: 0.5rem; height: 0.5rem; border-right: 2px solid var(--point-color); border-bottom: 2px solid var(--point-color); transform: translateY(-50%) rotate(-45deg); transition: transform 0.3s ease; }

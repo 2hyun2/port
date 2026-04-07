@@ -1,15 +1,15 @@
-import { use, useState } from 'react';
+import {  useState } from 'react';
 import { PORTFOLIO_DATA, PORTFOLIO_DATA2 } from './constants/data';
 import Modal from './components/Modal';
 import UserImage from '../src/assets/user.jpg'
 
 const App = () => {
 
-    const sections = [
-        { id: 'intro', label: 'Intro' },
-        { id: 'work', label: 'Work' },
-        { id: 'contact', label: 'Contact' },
-    ]
+    // const sections = [
+    //     { id: 'intro', label: 'Intro' },
+    //     { id: 'work', label: 'Work' },
+    //     { id: 'contact', label: 'Contact' },
+    // ]
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [ProfilePicOpen, setProfilePicOpen] = useState(false);
