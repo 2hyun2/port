@@ -1,6 +1,7 @@
 import { use, useState } from 'react';
 import { PORTFOLIO_DATA, PORTFOLIO_DATA2 } from './constants/data';
 import Modal from './components/Modal';
+import UserImage from '../src/assets/user.jpg'
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
     ]
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [ProfilePicOpen, setProfilePicOpen] = useState(false);
     return (
         <>
             {/* <nav className="">
@@ -24,11 +25,20 @@ const App = () => {
                 </ul>
             </nav> */}
 
+            {
+                ProfilePicOpen ?             
+                (
+                    <div className="modal no-print pic" onClick={() => setProfilePicOpen(false)}>
+                        <img src={UserImage} alt="" />
+                    </div>
+                ) : null
+            }
+
             <section id="intro">
                 <h2 className="section-title">나는 로또 1등이여도 일이 재밌을거야</h2>
                 <article className="intro-content non-padding">
                     <div className="intro-user">
-                        <div className="thumbnail"><img src="" alt="" /></div>
+                        <div className="thumbnail" onClick={() => setProfilePicOpen(true)}><img src={UserImage} alt="" /></div>
                         <div className="desc">
                             <h4 className="name">이정현</h4>
                             <p className="job">프론트엔드 개발자</p>

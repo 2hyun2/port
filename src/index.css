@@ -1,6 +1,7 @@
 /* src/index.css */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-@import "tailwindcss"; /* V4 권장 방식 */
+@import "tailwindcss"; 
+@property --draw { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
 
 body {
   font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -67,6 +68,9 @@ body {
       --text-sub: #64748b;
       --stroke: #e2e8f0;
 }
+.pic.modal { cursor: pointer;}
+.pic img { width:  clamp(0px, calc(100% - 2rem), var(--max-wd)); display: block; margin: 0 auto; }
+img { max-width: 100%; }
 
 button { display: inline-flex; gap: 0.5rem; align-items: center; font-size: 0.8rem; line-height: 1; color: var(--pri1); border: 1px solid var(--pri1); border-radius: 0.25rem; padding: 0.5rem 0.75rem; transition: all ease 0.3s; cursor: pointer; }
 button:hover { color: #fff; background-color: var(--pri1); }
@@ -89,8 +93,15 @@ article.non-padding { padding: 0; }
 .intro-content {  }
 .intro-content > div { padding: 1rem 2rem; }
 
+@keyframes rotate-border { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .intro-content .intro-user { display: flex; gap: 1rem; align-items: flex-start; background-color: var(--bg3); }
-.intro-content .intro-user .thumbnail { width: 7rem; aspect-ratio: 1/1; border: 3px solid #fff; border-radius: 50%; background-color: #00A3FF; }
+.intro-content .intro-user .thumbnail { position: relative; width: 7rem; aspect-ratio: 1/1; font-size: 0;  border-radius: 50%;; overflow: hidden; cursor: pointer;  transition: all ease 0.3s; }
+.intro-content .intro-user .thumbnail::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: conic-gradient( transparent, rgba(255, 255, 255, 0.3), transparent 30%); border-radius: 50%; animation: rotate-border 10s linear infinite; z-index: 1; }
+
+.intro-content .intro-user .thumbnail::after { content: ''; position: absolute; inset: 0;  border-radius: 50%; padding: 3px;  background: conic-gradient(var(--pri7) var(--draw), transparent 0); -webkit-mask:  linear-gradient(#fff 0 0) content-box,  linear-gradient(#fff 0 0); mask:  linear-gradient(#fff 0 0) content-box,  linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; --draw: 0%; transition: --draw 0.5s ease-in-out; z-index: 2; }
+.intro-content .intro-user .thumbnail:hover::after { --draw: 100% }
+
+
 .intro-content .intro-user .desc { }
 .intro-content .intro-user .desc .name { font-size: 1.75rem; font-weight: 700; }
 .intro-content .intro-user .desc .job { font-size: 1.25rem; color: var(--typo5); font-weight: 400; margin-bottom: 0.5rem; }
