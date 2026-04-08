@@ -5,25 +5,10 @@ import UserImage from '../src/assets/user.jpg'
 
 const App = () => {
 
-    // const sections = [
-    //     { id: 'intro', label: 'Intro' },
-    //     { id: 'work', label: 'Work' },
-    //     { id: 'contact', label: 'Contact' },
-    // ]
-
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [ProfilePicOpen, setProfilePicOpen] = useState(false);
     return (
         <>
-            {/* <nav className="">
-                <ul className="">
-                    {sections.map((item) => (
-                        <li>
-                            <a key={item.id} href={`#${item.id}`}>{item.label}</a>
-                        </li>
-                    ))}
-                </ul>
-            </nav> */}
 
             {
                 ProfilePicOpen ?             

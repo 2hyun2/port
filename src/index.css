@@ -192,32 +192,6 @@ details.details-obj summary { background-color: var(--bg-depth-1);  border-botto
 .modal-chapter p { line-height: 1.6; }
 
 
-@media print {
-  @page {
-    margin: 10mm 15mm;
-    size: auto;   
-  }
-  
-  * { visibility: hidden; }
-  nav, section:not(#reseme) { display: none !important; }
-
-  html, body { height: auto !important; }
-  #root { width: 100%; padding: 0; margin: 0; }
-
-  .modal, .modal * { visibility: visible; }
-  .print, .print * { visibility: visible !important; }
-
-  .modal {  position: absolute !important;  top: 0 !important;  left: 0 !important;  width: 100%;  }
-  
-  .modal-inner {  position: static !important; width: 100%;  border: none !important;  overflow: visible !important; }
-  .modal-chapter {  overflow: visible !important;   page-break-inside: avoid;  }
-
-    .no-print, 
-    .modal-header, 
-    .modal-header-btns,
-  button {  display: none !important; }
-  p, h5, strong {  display: block !important;   page-break-inside: avoid;  }
-}
 
 @media (max-width: 768px) {
   .view-m { display: none !important; }
@@ -236,4 +210,33 @@ details.details-obj summary { background-color: var(--bg-depth-1);  border-botto
 }
 @media (max-width: 400px) {
 
+}
+
+
+@media print {
+  @page {
+    margin: 8mm;
+    size: auto;   
+  }
+  
+  * { padding: 0; margin: 0; scroll-margin-top: 0 !important; visibility: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  html, body { height: auto !important; overflow: visible !important; }
+  #root { padding: 0 !important; }
+  nav, section:not(#reseme) { display: none !important; }
+  section { margin: 0 !important; }
+  section + section { margin: 0 !important; }
+  .modal, .modal * { visibility: visible !important; }
+  .print, .print * { visibility: visible !important; }
+
+  .modal {  position: static !important; width: 100% !important;  }
+  
+  .modal-inner {  width: 100% !important; max-height: initial !important;  border: none  !important;  overflow: visible  !important; }
+  .modal-chapter {  overflow: visible !important;   page-break-inside: avoid !important;  }
+
+    .no-print, 
+    .modal-header, 
+    .modal-header-btns,
+  button {  display: none !important; }
+  p, h5, strong {  display: block !important;   page-break-inside: avoid !important;  }
 }
