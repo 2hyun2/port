@@ -1,5 +1,5 @@
-import {  useState } from 'react';
-import { PORTFOLIO_DATA, PORTFOLIO_DATA2 } from './constants/data';
+import { useState } from 'react';
+import { PORTFOLIO_DATA, PORTFOLIO_DATA2, PORTFOLIO_DATA3 } from './constants/data';
 import Modal from './components/Modal';
 import UserImage from '../src/assets/user.jpg'
 
@@ -11,12 +11,12 @@ const App = () => {
         <>
 
             {
-                ProfilePicOpen ?             
-                (
-                    <div className="modal no-print pic" onClick={() => setProfilePicOpen(false)}>
-                        <img src={UserImage} alt="" />
-                    </div>
-                ) : null
+                ProfilePicOpen ?
+                    (
+                        <div className="modal no-print pic" onClick={() => setProfilePicOpen(false)}>
+                            <img src={UserImage} alt="" />
+                        </div>
+                    ) : null
             }
 
             <section id="intro">
@@ -38,6 +38,12 @@ const App = () => {
                                     <a href="mailto:eventietter@naver.com">
                                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                                         <span>eventietter@naver.com</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/2hyun2" target='_blank'>
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                        <span>https://github.com/2hyun2</span>
                                     </a>
                                 </li>
                             </ul>
@@ -111,12 +117,12 @@ const App = () => {
                     <div className="company">
                         <a href='https://www.prix.co.kr/' target='blank' className='title'>㈜웹컴퍼니</a>
                         <p className="date">2022. 07 ~ 2024. 11</p>
-                        <p className="desc">ASP, PHP를 기반으로 작업하는 웹에이전시</p>
+                        <p className="desc">웹에이전시</p>
                     </div>
                     <details open>
                         <summary>
                             <h3 className="details-title">Frontend & Publishing</h3>
-                            <h4 className="details-sub-title">에이전시 재직 당시 수행한 50여 개 이상의 프로젝트 중 주요 구축 사례입니다.</h4>
+                            <h4 className="details-sub-title">재직 당시 수행한 50여 개 이상의 프로젝트 중 주요 구축 사례입니다.</h4>
                         </summary>
                         {
                             PORTFOLIO_DATA2.publishing.map((obj, index) => (
@@ -141,6 +147,41 @@ const App = () => {
                                 </details>
                             ))
                         }
+                    </details>
+                </article>
+                <article className="side">
+                    <div className="company">
+                        <a href='https://www.prix.co.kr/' target='blank' className='title'>사이드 프로젝트</a>
+                        <p className="date">Apr 20, 2026 ~ Present</p>
+                        <p className="desc">배드민턴 동호회 웹앱</p>
+                    </div>
+                    <details open>
+                        <summary>
+                            <h3 className="details-title">배드민턴 동호회를 다니며 생각한 것들을 제작중입니다.</h3>
+                            <h4 className="details-sub-title">Full stack</h4>
+                        </summary>
+                        {PORTFOLIO_DATA3.categories.map((category, index) => (
+                            <details open key={index}>
+                                <summary>
+                                    <h3 className="details-title">{category.title}</h3>
+                                    <h4 className="details-sub-title">{category.description}</h4>
+                                </summary>
+
+                                {category.projects.map((obj, pIndex) => ( // 상위 index와 겹치지 않게 pIndex로 명명 권장
+                                    <details className='details-obj' key={pIndex}>
+                                        <summary>
+                                            <h4 className="obj-title">{obj.title}</h4>
+                                            <h5 className="obj-sub-title">{obj.summary}</h5>
+                                        </summary>
+                                        <ul className='details-desc'>
+                                            {obj.details.map((desc, dIndex) => (
+                                                <li key={dIndex}>{desc}</li>
+                                            ))}
+                                        </ul>
+                                    </details>
+                                ))}
+                            </details>
+                        ))}
                     </details>
                 </article>
             </section>
