@@ -1,4 +1,14 @@
 import { useState } from 'react';
+import {
+    SiNaver, SiHtml5, SiCss, SiJavascript,
+    SiReact, SiNodedotjs,
+    SiGit, SiGithub, SiFirebase,
+    SiMongodb, SiMysql, SiPhp, SiDotnet
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
+import { HiPhone } from 'react-icons/hi2';
+
 import { PORTFOLIO_DATA, PORTFOLIO_DATA2, PORTFOLIO_DATA3 } from './constants/data';
 import Modal from './components/Modal';
 import UserImage from '../src/assets/user.jpg'
@@ -14,35 +24,40 @@ const App = () => {
                 ProfilePicOpen ?
                     (
                         <div className="modal no-print pic" onClick={() => setProfilePicOpen(false)}>
-                            <img src={UserImage} alt="" />
+                            <img src={UserImage} className='rounded-xl shadow-xl' alt="" />
                         </div>
                     ) : null
             }
 
             <section id="intro">
-                <h2 className="section-title">나는 로또 1등이여도 일이 재밌을거야</h2>
-                <article className="intro-content non-padding">
-                    <div className="intro-user">
-                        <div className="thumbnail" onClick={() => setProfilePicOpen(true)}><img src={UserImage} alt="" /></div>
+                <h2 className="text-lg text-slate-900 font-bold text-center bg-slate-50 rounded-lg shadow p-1 mb-4">
+                    나는 로또 1등이여도 일이 재밌을거야
+                </h2>
+
+                <article className="intro-content border-1 border-gray-100 border rounded-xl shadow p-2 overflow-hidden">
+                    <div className="intro-user flex items-center gap-4 bg-gray-100 border border-gray-200 rounded-xl shadow p-2 mb-4">
+                        <div className="thumbnail relative w-[7rem] aspect-square rounded-full overflow-hidden cursor-pointer transition-all ease-300" onClick={() => setProfilePicOpen(true)}>
+                            <img src={UserImage} alt="프로필 사진" />
+                        </div>
                         <div className="desc">
-                            <h4 className="name">이정현</h4>
-                            <p className="job">프론트엔드 개발자</p>
-                            <ul className='contact'>
+                            <h4 className="text-2xl font-semibold">이정현 <span className="text-base">2Hyun2</span></h4>
+                            <p className="text-lg font-medium text-gray-500">Frontend Developer</p>
+                            <ul className='flex flex-col gap-0.5'>
                                 <li>
-                                    <a href="tel:010-2375-0449">
-                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                        <span>+82 10-2375-0449</span>
+                                    <a className='flex items-center gap-2 text-sm' href="tel:010-2375-0449">
+                                        <HiPhone className="w-[0.75rem] h-[0.75rem] text-green-600" />
+                                        <span>010-2375-0449</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:eventietter@naver.com">
-                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <a className='flex items-center gap-2 text-sm' href="mailto:eventietter@naver.com">
+                                        <SiNaver className="w-[0.75rem] h-[0.75rem] text-[#03C75A]" />
                                         <span>eventietter@naver.com</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/2hyun2" target='_blank'>
-                                        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <a className='flex items-center gap-2 text-sm' href="https://github.com/2hyun2" target='_blank' rel="noreferrer">
+                                        <SiGithub className="w-[0.75rem] h-[0.75rem] text-gray-900" />
                                         <span>https://github.com/2hyun2</span>
                                     </a>
                                 </li>
@@ -51,39 +66,98 @@ const App = () => {
                     </div>
 
                     <div className="intro-introduce">
-                        <ul>
-                            <li>
-                                <h5>생년월일</h5>
-                                <p>1997.02.08</p>
+                        <ul className='grid grid-cols-2 gap-1 pt-2 pb-0 px-2'>
+                            <li className='text-sm text-gray-600 '>
+                                <h5 className='text-gray-400 font-semibold mb-0.5'>생년월일</h5>
+                                <p className='text-gray-900 '>1997.02.08</p>
                             </li>
-                            <li>
-                                <h5>거주지</h5>
-                                <p>서울시 관악구 중앙동</p>
+                            <li className='text-sm text-gray-600 '>
+                                <h5 className='text-gray-400 font-semibold mb-0.5'>거주지</h5>
+                                <p className='text-gray-900 '>서울시 관악구 2호선 라인</p>
                             </li>
-                            <li>
-                                <h5>취미</h5>
-                                <p>배드민턴, 유튜브, 게임</p>
+                            <li className='text-sm text-gray-600 '>
+                                <h5 className='text-gray-400 font-semibold mb-0.5'>취미</h5>
+                                <p className='text-gray-900 '>배드민턴, 유튜브, 테트리스</p>
                             </li>
-                            <li>
-                                <h5>학력</h5>
-                                <p>서울공업고등학교 졸업 <br />시스템 자동화과</p>
+                            <li className='text-sm text-gray-600 '>
+                                <h5 className='text-gray-400 font-semibold mb-0.5'>학력</h5>
+                                <p className='text-gray-900 '>서울공업고등학교 졸업 <br />시스템 자동화과</p>
                             </li>
-                            <li>
-                                <h5>병역</h5>
-                                <p>군필 (2016. 02 ~ 2018. 12)</p>
+                            <li className='text-sm text-gray-600 '>
+                                <h5 className='text-gray-400 font-semibold mb-0.5'>병역</h5>
+                                <p className='text-gray-900 '>군필 (2016. 02 ~ 2018. 12)</p>
                             </li>
-                            <li>
-                                <h5>사회 경험</h5>
-                                <p>8년 9개월 (2026.04.01 기준)</p>
+                            <li className='text-sm text-gray-600'>
+                                <h5 className='text-gray-400 font-semibold '>총 사회 경험 (9년 1개월)</h5>
+                                <p className='text-gray-500'><span className="font-medium">비개발 직무:</span> 6년</p>
+                                <p className='text-gray-900'><span className="text-blue-600 font-bold">개발 경력:</span><span className="font-bold"> 4년차</span></p>
                             </li>
-                            <li className="mind">사용자를 위한, 나를 위한, 질문을 계속 하며 소통을 즐겨하며 해결합니다.</li>
                         </ul>
                     </div>
                 </article>
             </section>
 
+            <section id="skills" className="mb-8">
+                <h2 className="text-lg text-slate-900 font-bold text-center bg-slate-50 rounded-lg shadow p-1 mb-4">Tech Stack</h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <article className="border border-gray-200 rounded-xl shadow-sm p-4 bg-white">
+                        <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Primary Skills</h4>
+                        <ul className="flex flex-col gap-4">
+                            <li className='text-sm'>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Languages</h5>
+                                <p className='flex items-center gap-2'>
+                                    <SiHtml5 className='w-6 h-6 text-[#E34F26]' title="HTML5" />
+                                    <SiCss className='w-6 h-6 text-[#1572B6]' title="CSS3" />
+                                    <SiJavascript className='w-6 h-6 text-[#F7DF1E]' title="JavaScript" />
+                                </p>
+                            </li>
+                            <li className='text-sm'>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Frameworks & Runtime</h5>
+                                <p className="flex items-center gap-2">
+                                    <SiReact className='w-6 h-6 text-[#61DAFB]' title="React" />
+                                    <SiNodedotjs className='w-6 h-6 text-[#339933]' title="Node.js" />
+                                </p>
+                            </li>
+                            <li className='text-sm'>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Tools & IDEs</h5>
+                                <p className="flex items-center gap-2">
+                                    <VscVscode className="w-6 h-6 text-[#007ACC]" title="VS Code" />
+                                    <SiGit className="w-6 h-6 text-[#F05032]" title="Git" />
+                                    <SiGithub className="w-6 h-6 text-[#181717]" title="GitHub" />
+                                </p>
+                            </li>
+                        </ul>
+                    </article>
+
+                    {/* 경험해본 스택 카드 */}
+                    <article className="border border-gray-200 rounded-xl shadow-sm p-4 bg-white">
+                        <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Familiar With</h4>
+                        <ul className="flex flex-col gap-4">
+                            <li className='text-sm'>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Backend & Databases</h5>
+                                <p className="flex items-center gap-2 flex-wrap">
+                                    <SiPhp className="w-6 h-6 text-[#777BB4]" title="PHP" />
+                                    <SiDotnet className="w-6 h-6 text-[#512BD4]" title="ASP.NET" />
+                                    <SiMysql className="w-6 h-6 text-[#4479A1]" title="MySQL" />
+                                    <SiMongodb className="w-6 h-6 text-[#47A248]" title="MongoDB" />
+                                    <SiFirebase className="w-6 h-6 text-[#FFCA28]" title="Firebase" />
+                                </p>
+                            </li>
+                            <li className='text-sm'>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Cloud Services</h5>
+                                <p className="flex items-center gap-2">
+                                    <FaAws className="w-6 h-6 text-[#232F3E]" title="AWS" />
+                                </p>
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </section>
+
             <section id="work">
-                <h2 className="section-title">개발 경력 (만 3년, 2026.04.01 기준)</h2>
+                <h2 className="text-lg text-slate-900 font-bold text-center bg-slate-50 rounded-lg shadow p-1 mb-4">Work Experience & Projects</h2>
                 <article className='now'>
                     <div className="company">
                         <a href='https://medistorage.kr/' target='blank' className='title'>㈜비즈앤씨</a>
@@ -186,15 +260,15 @@ const App = () => {
                 </article>
             </section>
 
-            <section id="reseme">
-                <h2 className="section-title">자기 소개서</h2>
+            <section id="resume">
+                <h3 className="text-lg text-slate-900 font-bold text-center bg-slate-50 rounded-lg shadow p-1 mb-4">Introduce</h3>
 
                 <article className="cta-paper no-padding">
                     <button onClick={() => setIsModalOpen(true)} className="w-full flex items-center gap-4 padding-2 shadow-inner group">
-                        <div className="flex-none text-2xl group-hover:rotate-[-10deg] transition-transform">📁</div>
+                        <div className="flex-none text-2xl group-hover:rotate-[-45deg] transition-transform">📄</div>
                         <div className="text-left flex-auto">
-                            <strong className="block text-lg text-point-color">[성장형 해결사] 이정현의 비밀 기록</strong>
-                            <span className="text-sm text-sub">8년 9개월의 성실함과 3년의 기술적 성취를 담았습니다. (클릭하여 열람)</span>
+                            <strong className="block text-lg text-point-color">Tech Essay : 경계를 두지 않는 문제 해결</strong>
+                            <span className="text-sm text-sub">9년의 책임감과 4년차 프론트엔드 개발자의 치열한 고민을 담았습니다.</span>
                         </div>
                     </button>
                     <Modal
