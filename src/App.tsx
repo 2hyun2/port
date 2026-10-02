@@ -224,14 +224,14 @@ const App = () => {
                 </article>
                 <article className="side">
                     <div className="company">
-                        <a href='https://github.com/2hyun2/badminton-webapp' target='_blank' rel='noreferrer' className='title'>사이드 프로젝트</a>
-                        <p className="date">2026.04.20 ~ 진행 중</p>
-                        <p className="desc">배드민턴 동호회 웹앱</p>
+                        <span className='title'>사이드 프로젝트</span>
+                        <p className="date">2026.04 ~ 진행 중</p>
+                        <p className="desc">동호회 운영 · 생활 기록 웹앱</p>
                     </div>
                     <details open>
                         <summary>
-                            <h3 className="details-title">배드민턴 동호회 운영 웹앱 개발</h3>
-                            <h4 className="details-sub-title">출석부터 매칭, 경기 기록과 랭킹까지 동호회 운영 흐름을 관리하는 개인 프로젝트</h4>
+                            <h3 className="details-title">개인 프로젝트</h3>
+                            <h4 className="details-sub-title">사용자 흐름과 데이터 구조를 직접 설계하며 만드는 웹앱</h4>
                         </summary>
                         {PORTFOLIO_DATA3.categories.map((category, index) => (
                             <details open key={index}>

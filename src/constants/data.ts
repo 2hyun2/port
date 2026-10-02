@@ -165,7 +165,7 @@ export const PORTFOLIO_DATA3 = {
     categories: [
         {
             id: 'badminton',
-            title: '동호회 운영 기능',
+            title: '배드민턴 동호회 운영 웹앱',
             description: '회원·출석 관리부터 실시간 매칭, 경기 기록과 랭킹까지 하나의 흐름으로 구성',
             projects: [
                 {
@@ -182,6 +182,26 @@ export const PORTFOLIO_DATA3 = {
                     ]
                 }
             ],
+        },
+        {
+            id: 'storage-basket',
+            title: '수납바구니',
+            description: '집 안 물건의 보관 위치를 기록하고 빠르게 찾는 웹앱',
+            projects: [
+                {
+                    title: '위치 트리 기반의 물건 관리 기능 구축',
+                    summary: '보관 위치와 물건 정보를 연결해 원하는 물건을 쉽게 찾도록 만든 개인 프로젝트',
+                    technologies: ['React', 'Zustand', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Zod', 'AI-Assisted Development'],
+                    details: [
+                        '방·가구·서랍처럼 중첩되는 보관 위치를 트리 구조로 구성하고, 하위 위치의 물건까지 함께 탐색하도록 구현',
+                        '물건명, 위치, 카테고리, 태그, 메모를 한 번에 검색하고 최근 수정·등록일·가나다·수량 기준으로 정렬',
+                        '물건과 위치의 등록·수정·삭제 흐름을 구성하고, 모바일에서도 위치와 물건 정보를 편하게 확인하도록 화면을 설계',
+                        'Express API와 Supabase 데이터베이스를 연결해 물건·위치 정보를 저장하고, 입력값을 서버에서도 검증하도록 구성',
+                        '같은 위치 안의 이름 중복과 자기 하위 위치로의 이동을 막아, 위치 트리 데이터가 꼬이지 않도록 처리',
+                        'AI 도구로 기능 초안을 빠르게 만들고, 데이터 구조·예외 상황·검증 규칙은 직접 검토하고 수정하며 개발'
+                    ]
+                }
+            ]
         }
     ]
 };
