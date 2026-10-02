@@ -86,6 +86,16 @@ article.non-padding { padding: 0; }
 
 
 .intro-content {  }
+.intro-content .thumbnail {
+  display: block;
+  gap: 0;
+  padding: 0;
+  line-height: 0;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.intro-content .thumbnail:hover { color: inherit; background: transparent; }
 
 @keyframes rotate-border { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .intro-content .intro-user {}
@@ -97,7 +107,7 @@ article.non-padding { padding: 0; }
 #work article + article { margin-top: 2rem; }
 #work article::before { position: absolute; content: ''; top: 0; left: -3rem; bottom: -3rem; width: 1px; background-color: var(--stroke4); }
 #work article::after { position: absolute; content: ''; top: 0; left: -3rem; z-index: 10; width: 4rem; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #fff; font-weight: 500; text-align: center; background-color: var(--pri6); border: 1px solid var(--stroke4); border-radius: 50%; transform: translate(-50%, -0.5rem); }
-#work article.now::after { content: '현재'; background-color: var(--pri1); }
+#work article.now::after { content: '2025 ~ 2026'; background-color: var(--pri1); }
 #work article.past::after { content: '2022 ~ 2024'; background-color: var(--pri2); }
 #work article.side::after { content: 'Side Project'; }
 #work article.na::after { content: 'N/A'; background-color: var(--pri3); }
@@ -127,6 +137,10 @@ details.details-obj summary { background-color: var(--bg-depth-1);  border-botto
 .details-desc li { position: relative; font-size: 1rem; color: var(--typo2); padding: 0 0 0 0.8rem; }
 .details-desc li::before { position: absolute; content: ''; top: calc(0.5rem * 1.4); left: 0; display: inline-block; width: 0.4rem; aspect-ratio: 1/1; vertical-align: middle; background-color: var(--typo2); border-radius: 50%; transform: translateY(-50%); }
 .details-desc li:has(.details-desc-title) + li { margin-top: 0.5rem; }
+.details-desc .details-stack { padding: 0.75rem 0.9rem; margin-bottom: 0.8rem; color: var(--text-main); background-color: #ffffff; border: 1px solid #dbeafe; border-radius: 0.5rem; }
+.details-desc .details-stack::before { display: none; }
+.details-stack span { display: block; margin-bottom: 0.25rem; font-size: 0.75rem; font-weight: 700; color: var(--point-color); }
+.details-stack p { font-size: 0.85rem; line-height: 1.5; color: var(--text-sub); }
 
 .details-title { color: var(--text-main); font-weight: 700; }
 .details-sub-title { color: var(--text-sub); }

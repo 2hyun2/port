@@ -29,70 +29,47 @@ const App = () => {
                     ) : null
             }
 
-            <section id="intro">
-                <h2 className="text-lg text-slate-900 font-bold text-center bg-slate-50 rounded-lg shadow p-1 mb-4">
-                    나는 로또 1등이여도 일이 재밌을거야
-                </h2>
+            <section id="intro" aria-labelledby="intro-title">
+                <article className="intro-content relative isolate overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 px-5 py-6 text-white shadow-xl sm:px-8 sm:py-8">
+                    <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
+                    <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/3 h-48 w-48 rounded-full bg-sky-400/10 blur-3xl" />
 
-                <article className="intro-content border-1 border-gray-100 border rounded-xl shadow p-2 overflow-hidden">
-                    <div className="intro-user flex items-center gap-4 bg-gray-100 border border-gray-200 rounded-xl shadow p-2 mb-4">
-                        <div className="thumbnail relative w-[7rem] aspect-square rounded-full overflow-hidden cursor-pointer transition-all ease-300" onClick={() => setProfilePicOpen(true)}>
-                            <img src={UserImage} alt="프로필 사진" />
+                    <div className="relative flex items-start justify-between gap-5">
+                        <div className="min-w-0">
+                            <p className="inline-flex rounded-full border border-blue-300/30 bg-blue-400/10 px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-blue-200">
+                                FRONTEND DEVELOPER · 4TH YEAR
+                            </p>
+                            <h1 id="intro-title" className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+                                이정현 <span className="ml-1 text-base font-medium text-slate-400 sm:text-lg">2Hyun2</span>
+                            </h1>
+                            <p className="mt-3 max-w-md text-sm leading-6 text-slate-300 sm:text-base">
+                                웹 퍼블리싱부터 프론트엔드 기능 개발까지,<br className="hidden sm:block" />
+                                서비스에 필요한 영역을 폭넓게 경험해 왔습니다.
+                            </p>
                         </div>
-                        <div className="desc">
-                            <h4 className="text-2xl font-semibold">이정현 <span className="text-base">2Hyun2</span></h4>
-                            <p className="text-lg font-medium text-gray-500">Frontend Developer</p>
-                            <ul className='flex flex-col gap-0.5'>
-                                <li>
-                                    <a className='flex items-center gap-2 text-sm' href="tel:010-2375-0449">
-                                        <HiPhone className="w-[0.75rem] h-[0.75rem] text-green-600" />
-                                        <span>010-2375-0449</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='flex items-center gap-2 text-sm' href="mailto:eventietter@naver.com">
-                                        <SiNaver className="w-[0.75rem] h-[0.75rem] text-[#03C75A]" />
-                                        <span>eventietter@naver.com</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='flex items-center gap-2 text-sm' href="https://github.com/2hyun2" target='_blank' rel="noreferrer">
-                                        <SiGithub className="w-[0.75rem] h-[0.75rem] text-gray-900" />
-                                        <span>https://github.com/2hyun2</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <button
+                            type="button"
+                            aria-label="프로필 사진 크게 보기"
+                            className="thumbnail relative w-20 shrink-0 overflow-hidden rounded-full shadow-xl transition-transform hover:scale-105 sm:w-28"
+                            onClick={() => setProfilePicOpen(true)}
+                        >
+                            <img src={UserImage} alt="이정현 프로필 사진" className="aspect-square h-full w-full object-cover" />
+                        </button>
                     </div>
 
-                    <div className="intro-introduce">
-                        <ul className='grid grid-cols-2 gap-1 pt-2 pb-0 px-2'>
-                            <li className='text-sm text-gray-600 '>
-                                <h5 className='text-gray-400 font-semibold mb-0.5'>생년월일</h5>
-                                <p className='text-gray-900 '>1997.02.08</p>
-                            </li>
-                            <li className='text-sm text-gray-600 '>
-                                <h5 className='text-gray-400 font-semibold mb-0.5'>거주지</h5>
-                                <p className='text-gray-900 '>서울시 관악구 2호선 라인</p>
-                            </li>
-                            <li className='text-sm text-gray-600 '>
-                                <h5 className='text-gray-400 font-semibold mb-0.5'>취미</h5>
-                                <p className='text-gray-900 '>배드민턴, 유튜브, 테트리스</p>
-                            </li>
-                            <li className='text-sm text-gray-600 '>
-                                <h5 className='text-gray-400 font-semibold mb-0.5'>학력</h5>
-                                <p className='text-gray-900 '>서울공업고등학교 졸업 <br />시스템 자동화과</p>
-                            </li>
-                            <li className='text-sm text-gray-600 '>
-                                <h5 className='text-gray-400 font-semibold mb-0.5'>병역</h5>
-                                <p className='text-gray-900 '>군필 (2016. 02 ~ 2018. 12)</p>
-                            </li>
-                            <li className='text-sm text-gray-600'>
-                                <h5 className='text-gray-400 font-semibold '>총 사회 경험 (9년 1개월)</h5>
-                                <p className='text-gray-500'><span className="font-medium">비개발 직무:</span> 6년</p>
-                                <p className='text-gray-900'><span className="text-blue-600 font-bold">개발 경력:</span><span className="font-bold"> 4년차</span></p>
-                            </li>
-                        </ul>
+                    <div className="relative mt-7 grid gap-2 border-t border-white/10 pt-4 text-sm sm:grid-cols-3">
+                        <a className="group rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 transition-colors hover:border-blue-300/50 hover:bg-white/10" href="tel:010-2375-0449">
+                            <span className="flex items-center gap-2 text-[10px] font-bold tracking-[0.14em] text-blue-200"><HiPhone className="h-3.5 w-3.5" /> PHONE</span>
+                            <span className="mt-1 block font-medium text-white">010-2375-0449</span>
+                        </a>
+                        <a className="group min-w-0 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 transition-colors hover:border-blue-300/50 hover:bg-white/10" href="mailto:eventietter@naver.com">
+                            <span className="flex items-center gap-2 text-[10px] font-bold tracking-[0.14em] text-blue-200"><SiNaver className="h-3.5 w-3.5 text-[#03C75A]" /> EMAIL</span>
+                            <span className="mt-1 block truncate font-medium text-white">eventietter@naver.com</span>
+                        </a>
+                        <a className="group rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 transition-colors hover:border-blue-300/50 hover:bg-white/10" href="https://github.com/2hyun2" target="_blank" rel="noreferrer">
+                            <span className="flex items-center gap-2 text-[10px] font-bold tracking-[0.14em] text-blue-200"><SiGithub className="h-3.5 w-3.5" /> GITHUB</span>
+                            <span className="mt-1 block font-medium text-white">github.com/2hyun2</span>
+                        </a>
                     </div>
                 </article>
             </section>
@@ -100,23 +77,17 @@ const App = () => {
             <section id="skills" className="mb-8">
                 <h2 className="text-lg text-slate-900 font-bold text-center bg-slate-50 rounded-lg shadow p-1 mb-4">Tech Stack</h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <article className="border border-gray-200 rounded-xl shadow-sm p-4 bg-white">
-                        <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Primary Skills</h4>
+                        <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Core Skills</h4>
                         <ul className="flex flex-col gap-4">
                             <li className='text-sm'>
-                                <h5 className='text-gray-600 font-semibold mb-1'>Languages</h5>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Frontend</h5>
                                 <p className='flex items-center gap-2'>
                                     <SiHtml5 className='w-6 h-6 text-[#E34F26]' title="HTML5" />
                                     <SiCss className='w-6 h-6 text-[#1572B6]' title="CSS3" />
                                     <SiJavascript className='w-6 h-6 text-[#F7DF1E]' title="JavaScript" />
-                                </p>
-                            </li>
-                            <li className='text-sm'>
-                                <h5 className='text-gray-600 font-semibold mb-1'>Frameworks & Runtime</h5>
-                                <p className="flex items-center gap-2">
                                     <SiReact className='w-6 h-6 text-[#61DAFB]' title="React" />
-                                    <SiNodedotjs className='w-6 h-6 text-[#339933]' title="Node.js" />
                                 </p>
                             </li>
                             <li className='text-sm'>
@@ -145,10 +116,32 @@ const App = () => {
                                 </p>
                             </li>
                             <li className='text-sm'>
-                                <h5 className='text-gray-600 font-semibold mb-1'>Cloud Services</h5>
+                                <h5 className='text-gray-600 font-semibold mb-1'>Server & Cloud</h5>
                                 <p className="flex items-center gap-2">
+                                    <SiNodedotjs className='w-6 h-6 text-[#339933]' title="Node.js" />
                                     <FaAws className="w-6 h-6 text-[#232F3E]" title="AWS" />
                                 </p>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article className="border border-blue-100 rounded-xl shadow-sm p-4 bg-blue-50/40 md:col-span-2">
+                        <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-blue-100 pb-2">
+                            <h4 className="text-lg font-bold text-gray-800">AI-Assisted Development</h4>
+                            <span className="text-xs font-medium text-blue-700">AI Coding Workflow</span>
+                        </div>
+                        <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+                            <li>
+                                <h5 className="text-sm font-semibold text-slate-800">Planning & Prototyping</h5>
+                                <p className="mt-1 text-sm leading-5 text-slate-600">요구사항을 기능 단위로 정리하고 화면과 컴포넌트 초안을 빠르게 구체화합니다.</p>
+                            </li>
+                            <li>
+                                <h5 className="text-sm font-semibold text-slate-800">Debugging & Refactoring</h5>
+                                <p className="mt-1 text-sm leading-5 text-slate-600">오류 원인을 함께 분석하고 리팩터링 후보를 검토해 코드 개선에 활용합니다.</p>
+                            </li>
+                            <li>
+                                <h5 className="text-sm font-semibold text-slate-800">Review & Verification</h5>
+                                <p className="mt-1 text-sm leading-5 text-slate-600">AI 결과를 그대로 적용하지 않고 브라우저 테스트와 직접 수정으로 품질을 확인합니다.</p>
                             </li>
                         </ul>
                     </article>
@@ -161,7 +154,7 @@ const App = () => {
                 <article className='now'>
                     <div className="company">
                         <a href='https://medistorage.kr/' target='blank' className='title'>㈜비즈앤씨</a>
-                        <p className="date">2025.09.15 ~ 현재</p>
+                        <p className="date">2025.09.15 ~ 2026.07.24</p>
                         <p className="desc">의료용품을 전문으로 유통하는 유통 플랫폼 기업</p>
                     </div>
                     {PORTFOLIO_DATA.categories.map((category, index) => (
@@ -178,6 +171,12 @@ const App = () => {
                                         <h5 className="obj-sub-title">{obj.summary}</h5>
                                     </summary>
                                     <ul className='details-desc'>
+                                        {obj.technologies && (
+                                            <li className="details-stack">
+                                                <span>사용 기술</span>
+                                                <p>{obj.technologies.join(' · ')}</p>
+                                            </li>
+                                        )}
                                         {obj.details.map((desc, dIndex) => (
                                             <li key={dIndex}>{desc}</li>
                                         ))}
@@ -195,8 +194,8 @@ const App = () => {
                     </div>
                     <details open>
                         <summary>
-                            <h3 className="details-title">Frontend & Publishing</h3>
-                            <h4 className="details-sub-title">재직 당시 수행한 50여 개 이상의 프로젝트 중 주요 구축 사례입니다.</h4>
+                            <h3 className="details-title">웹사이트 구축 및 퍼블리싱</h3>
+                            <h4 className="details-sub-title">다양한 기업·기관 웹사이트 구축에 참여</h4>
                         </summary>
                         {
                             PORTFOLIO_DATA2.publishing.map((obj, index) => (
@@ -225,14 +224,14 @@ const App = () => {
                 </article>
                 <article className="side">
                     <div className="company">
-                        <a href='https://www.prix.co.kr/' target='blank' className='title'>사이드 프로젝트</a>
-                        <p className="date">Apr 20, 2026 ~ Present</p>
+                        <a href='https://github.com/2hyun2/badminton-webapp' target='_blank' rel='noreferrer' className='title'>사이드 프로젝트</a>
+                        <p className="date">2026.04.20 ~ 진행 중</p>
                         <p className="desc">배드민턴 동호회 웹앱</p>
                     </div>
                     <details open>
                         <summary>
-                            <h3 className="details-title">배드민턴 동호회를 다니며 생각한 것들을 제작중입니다.</h3>
-                            <h4 className="details-sub-title">Full stack</h4>
+                            <h3 className="details-title">배드민턴 동호회 운영 웹앱 개발</h3>
+                            <h4 className="details-sub-title">출석부터 매칭, 경기 기록과 랭킹까지 동호회 운영 흐름을 관리하는 개인 프로젝트</h4>
                         </summary>
                         {PORTFOLIO_DATA3.categories.map((category, index) => (
                             <details open key={index}>
@@ -248,6 +247,12 @@ const App = () => {
                                             <h5 className="obj-sub-title">{obj.summary}</h5>
                                         </summary>
                                         <ul className='details-desc'>
+                                            {obj.technologies && (
+                                                <li className="details-stack">
+                                                    <span>사용 기술</span>
+                                                    <p>{obj.technologies.join(' · ')}</p>
+                                                </li>
+                                            )}
                                             {obj.details.map((desc, dIndex) => (
                                                 <li key={dIndex}>{desc}</li>
                                             ))}
@@ -267,8 +272,8 @@ const App = () => {
                     <button onClick={() => setIsModalOpen(true)} className="w-full flex items-center gap-4 padding-2 shadow-inner group">
                         <div className="flex-none text-2xl group-hover:rotate-[-45deg] transition-transform">📄</div>
                         <div className="text-left flex-auto">
-                            <strong className="block text-lg text-point-color">Tech Essay : 경계를 두지 않는 문제 해결</strong>
-                            <span className="text-sm text-sub">9년의 책임감과 4년차 프론트엔드 개발자의 치열한 고민을 담았습니다.</span>
+                            <strong className="block text-lg text-point-color">Tech Essay : 이정현</strong>
+                            <span className="text-sm text-sub">서비스 흐름과 운영의 불편을 함께 살피는 개발자 이야기입니다.</span>
                         </div>
                     </button>
                     <Modal

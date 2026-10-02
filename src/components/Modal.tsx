@@ -29,83 +29,40 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
                 <div className="modal-body print flex-1 bg-white p-4 overflow-y-auto [scrollbar-width:thin]">
                     <article className="modal-content flex flex-col space-y-8 divide-y divide-[var(--stroke4)]">
                         <div className="modal-chapter pb-4 mt-4 first:mt-0">
-                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">사용자 경험(UX)과 데이터의 연결점, 프론트엔드</h5>
-                            {/* <p> 태그들을 flex-col과 gap으로 묶어 문단 사이 여백을 줍니다 */}
+                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">서비스 흐름을 끝까지 살피는 개발자</h5>
                             <div className="text-gray-600 leading-relaxed flex flex-col gap-3">
                                 <p>
-                                    <strong>"코드의 끝에는 항상 사용자가 있다"</strong>는 생각으로 개발에 임합니다.
+                                    웹을 만드는 일은 화면을 구현하는 데서 끝나지 않는다고 생각합니다. 사용자가 서비스를 이해하고 행동하는 순서, 운영자가 정보를 관리하는 과정, 예상하지 못한 상황에서 기능이 어떻게 동작할지까지 함께 살핍니다.
                                 </p>
                                 <p>
-                                    단순히 화면을 그려내는 것을 넘어, 백엔드 API와의 효율적인 데이터 통신과 렌더링 최적화를 통해 쾌적한 웹 환경을 제공하는 데 집중합니다.
-                                </p>
-                                <p>
-                                    알 수 없는 오류와 마주하더라도 회피하지 않고, 공식 문서와 디버깅 툴을 집요하게 파고들어 원인을 분석하고 해결책을 내 것으로 만드는 과정 자체를 즐깁니다. 이러한 끈기와 문제 해결 능력이 저를 끊임없이 성장시키는 가장 큰 무기입니다.
+                                    HTML, CSS, JavaScript 기반의 웹 퍼블리싱에서 출발해 React로 웹앱을 만들고, 서비스에 필요한 데이터와 기능을 화면에 연결하는 일을 해왔습니다. 필요한 경우에는 API와 서버의 흐름까지 확인하며 문제를 해결합니다.
                                 </p>
                             </div>
                         </div>
 
                         <div className="modal-chapter pb-4 mt-4">
-                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">문제 해결 경험</h5>
+                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">운영의 불편을 기능으로 바꾼 경험</h5>
                             <div className="text-gray-600 leading-relaxed flex flex-col gap-3">
                                 <p>
-                                    <strong>플랫폼의 한계를 기술로 돌파하다</strong>
+                                    의료용품 커머스에서는 많은 상품과 카테고리를 더 쉽게 탐색하도록 화면을 구성하고, 기획전·배송 안내·회원 흐름처럼 구매 과정에 필요한 기능을 꾸준히 다듬었습니다.
                                 </p>
                                 <p>
-                                    임대형 솔루션(Cafe24)의 구조적 한계로 인해 서비스 고도화에 제약을 느꼈을 때, 기존 솔루션에 머물지 않고 별도로 AWS 환경을 구축하고 연동하고자 하는 열망을 가졌습니다.
-                                </p>
-                                <p>
-                                    사내에 기획 부서가 부재하여 기획, 디자인, 프론트엔드, 백엔드 모든 과정을 2명이서 감당해야 했을 땐 무모하다는 생각도 들었지만, 고도화를 위해서는 반드시 필요한 기술이라 판단하여 하나씩 설계하며 돌파했습니다.
-                                </p>
-                                <p>
-                                    모든 부서의 소중함을 느끼며 고충을 이해하고, 새로운 지식을 습득하며 성장하는 제 자신을 발견했습니다. 이러한 치열한 과정을 거쳐 현재의 고도화된 시스템을 완성해 냈습니다.
+                                    재고를 빠르게 확인하기 어렵다는 운영팀의 문제를 해결하기 위해서는 ERP 재고와 자사몰 상품 정보를 한곳에서 조회하는 사내 대시보드를 만들었습니다. 현장에서 반복되는 일을 관찰하고, 실제로 쓰기 편한 기능으로 바꾸는 과정에서 개발의 가치를 배웠습니다.
                                 </p>
                             </div>
                         </div>
 
                         <div className="modal-chapter pb-4 mt-4">
-                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">직무 성취 경험</h5>
+                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">일하는 방식</h5>
                             <div className="text-gray-600 leading-relaxed flex flex-col gap-3">
                                 <p>
-                                    <strong>비즈니스의 가려운 곳을 긁어주는 개발</strong>
+                                    기능을 만들기 전에는 사용자가 어디에서 멈추는지, 운영자가 어떤 정보를 반복해서 확인하는지부터 정리합니다. 핵심 흐름을 먼저 구현하고, 실제 사용 과정에서 확인한 문제를 다음 개선으로 연결합니다.
                                 </p>
                                 <p>
-                                    다중 쇼핑몰 운영 특성상 실시간 재고를 반영하고 수량에 따라 상품 상태를 변화시키는 것은 큰 리스크를 유발합니다. 따라서 보통 재고를 무한으로 설정하여 유동적인 흐름을 유지하지만, 도/소매 의료기기 유통업 특성상 1,000여 개의 메인 제품 코드와 파생 옵션들을 보유하고 있어 기존 ERP(ecount) 서비스만으로는 재고 조회가 까다롭고 불편하다는 실무진의 의견이 있었습니다.
+                                    새로운 기술과 AI 도구도 이 과정을 빠르게 만드는 데 활용합니다. 다만 결과를 그대로 적용하기보다 코드와 화면을 직접 검토하고, 서비스에 맞는지 확인한 뒤 반영합니다.
                                 </p>
                                 <p>
-                                    이를 해결하기 위해 사내 IP 망, 특정 계정 권한, 실시간 검색 기능을 통합한 Node.js 기반 서버 API를 직접 설계하고 제작하게 되었습니다.
-                                </p>
-                                <p>
-                                    결과적으로 재고를 실시간으로 파악해야 하는 MD, CS 부서에서 폭발적인 호응을 얻었으며, 이제는 사내에서 '없으면 불편함을 느끼는' 필수 서비스로 자리 잡았습니다. 동료들의 업무 효율성을 크게 개선하여 궁극적으로 매출에도 긍정적인 영향을 미친 뜻깊은 경험입니다.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="modal-chapter pb-4 mt-4">
-                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">가치관 및 신조</h5>
-                            <div className="text-gray-600 leading-relaxed flex flex-col gap-3">
-                                <p>
-                                    <strong>사용자를 위한, 나를 위한 질문을 멈추지 않습니다.</strong>
-                                </p>
-                                <p>
-                                    기획안이 모호하거나 기술적 제약이 생겼을 때, 저는 "왜?"라는 질문에서 답을 찾습니다. 단순히 코드를 짜는 것에 그치지 않고, 이 기능이 사용자에게 어떤 가치를 주는지, 운영 효율을 얼마나 높이는지 끊임없이 질문하며 최적의 결과물을 도출하려 노력합니다.
-                                </p>
-                                <p>
-                                    모르는 것을 인정하고 질문하는 용기, 그리고 그 답을 내 것으로 만드는 집요함이 저를 성장시키는 가장 큰 원동력입니다.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="modal-chapter pb-4 mt-4">
-                            <h5 className="text-xl font-bold text-gray-800 mb-3 border-b pb-2">경계를 두지 않는 기술 스택과 점진적 고도화</h5>
-                            <div className="text-gray-600 leading-relaxed flex flex-col gap-3">
-                                <p>
-                                    <strong>"프로젝트에 필요하다면, 영역을 가리지 않고 학습하고 적용합니다."</strong>
-                                </p>
-                                <p>
-                                    프론트엔드 영역에 머물지 않고, 필요시 Node.js 기반의 RESTful API 서버를 직접 구축하거나 AWS 인프라(S3 등)를 연동하는 등 전체 시스템의 아키텍처를 이해하며 개발합니다. 데이터베이스(MongoDB, MySQL)의 흐름을 알기 때문에 프론트엔드 단에서 상태 관리와 비동기 처리를 훨씬 더 견고하게 설계할 수 있습니다.
-                                </p>
-                                <p>
-                                    과거에는 로직의 완벽함과 효율성에 집착하여 초기 설계에 과도한 시간을 쏟는 경향이 있었습니다. 현재는 이를 개선하기 위해 <strong>'점진적 개선'</strong> 방식을 원칙으로 삼고 있습니다. 핵심 기능(MVP)을 우선적으로 구현하여 서비스의 뼈대를 갖춘 뒤, 지속적인 리팩토링을 통해 성능과 코드의 품질을 끌어올리는 방식으로 속도와 퀄리티의 균형을 맞추고 있습니다.
+                                    앞으로도 사용자와 운영자 모두에게 이해하기 쉬운 웹서비스를 만드는 개발자로 성장하겠습니다.
                                 </p>
                             </div>
                         </div>
