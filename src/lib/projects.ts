@@ -6,6 +6,7 @@ export type Project = {
   summary: string;
   focus: string;
   implementation: string;
+  siteUrl?: string;
   stack: string[];
   flow: string[];
   workItems?: {
@@ -71,6 +72,7 @@ export const projects: Project[] = [
     summary: "Codex와 대화하며 화면, 상태, API, 데이터베이스까지 연결한 위치 기반 물건 관리 웹앱",
     focus: "방·가구·서랍처럼 중첩되는 위치 구조와 검색·정렬·선택 상태를 나눠, 물건을 찾는 과정을 단순하게 만들었습니다.",
     implementation: "위치 트리에서 현재 선택한 범위와 물건 원본 데이터를 분리하고, 검색과 정렬 조건에 맞춰 보이는 결과를 구성했습니다.",
+    siteUrl: "https://storage-basket.vercel.app/",
     stack: ["React", "Vite", "Tailwind CSS", "Zustand", "Express", "Supabase", "Codex"],
     flow: ["위치 선택", "하위 위치 필터", "검색·정렬", "물건 확인"],
     workItems: [

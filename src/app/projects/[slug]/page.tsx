@@ -24,6 +24,7 @@ export default async function ProjectPage({ params }: PageProps) {
         <p className={styles.kind}>{project.kind}</p>
         <h1>{project.title}</h1>
         <p className={styles.summary}>{project.summary}</p>
+        {project.siteUrl && <a className={styles.siteLink} href={project.siteUrl} target="_blank" rel="noreferrer">{project.title} 열기</a>}
       </section>
 
       <section className={styles.content}>
