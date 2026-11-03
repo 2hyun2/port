@@ -6,6 +6,7 @@ export default function Header() {
             <nav className="header-nav">
                 <Link href="/" className="header-home">HOME</Link>
                 <div className="header-links">
+                    <Link href="/about">ABOUT</Link>
                     <Link href="/#projects">PROJECTS</Link>
                     <Link href="/#publishing">WORK</Link>
                     <Link href="/#contact">CONTACT</Link>

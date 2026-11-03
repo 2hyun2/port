@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ProjectExplorer } from "@/components/project-explorer";
 import { PublishingArchive } from "@/components/publishing-archive";
 import { projects } from "@/lib/projects";
@@ -27,15 +29,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="home-slide"> */}
-        {/* <div className="home-layout-inner"> */}
-          {/* <div className="home-intro-box"> */}
-            {/* <p className="eyebrow">WHAT I BUILD</p> */}
-            {/* <h2>정적인 화면보다,<br />다음 행동이 쉬운 경험을 만듭니다.</h2> */}
-            {/* <p className="intro-description">검색과 필터, 실시간 상태, 운영 데이터처럼 화면 밖의 조건이 사용자에게는 단순한 선택으로 보이도록 설계합니다.</p> */}
-          {/* </div> */}
-        {/* </div> */}
-      {/* </section> */}
+      <section id="about" className="home-slide">
+        <div className="home-layout-inner">
+          <div className="home-intro-box principle-card">
+            <p className="eyebrow">간단 소개</p>
+            <ol>
+              <li><span>01</span> 재작업은 싫어 기획부터 꼼꼼히</li>
+              <li><span>02</span> 코드는 범용성 있게 컴포넌트화</li>
+              <li><span>03</span> AI는 만능이 아니야 검증하고 넘기자</li>
+            </ol>
+            <Link href="/about" className="solid-link">간단 소개 더보기</Link>
+          </div>
+        </div>
+      </section>
 
       <ProjectExplorer projects={projects} className="home-slide" />
 
