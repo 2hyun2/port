@@ -78,6 +78,10 @@
   color: var(--color-ink);
 }
 
+.facts dd p + p {
+  margin-top: 0.5rem;
+}
+
 .note {
   display: grid;
   gap: 0.75rem;
