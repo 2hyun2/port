@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ProjectExplorer } from "@/components/project-explorer";
 import { PublishingArchive } from "@/components/publishing-archive";
+import { FeedbackForm } from "@/components/feedback-form";
 import { projects } from "@/lib/projects";
 import { livePublishingWorks, publishingArchive } from "@/lib/publishing";
 
@@ -49,6 +50,8 @@ export default function Home() {
         works={livePublishingWorks}
         contribution={publishingArchive.contribution}
       />
+
+      <FeedbackForm />
 
       <section id="contact" className="contact-section">
         <div className="contact-panel">
