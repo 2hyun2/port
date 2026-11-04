@@ -4,7 +4,7 @@ export function AboutMe() {
   return (
     <section id="about" className={styles.about}>
       <div className={styles.heading}>
-        <p className="eyebrow">ABOUT ME</p>
+        <p className="eyebrow">소개</p>
         <h2>이정현입니다.</h2>
         <p>
           퍼블리싱으로 시작해 프론트엔드까지 작업 범위를 넓혀 왔습니다.
@@ -32,6 +32,28 @@ export function AboutMe() {
           </div>
         </dl>
       </div>
+
+      <section className={styles.career}>
+        <p className={styles.careerLabel}>경력</p>
+        <dl className={styles.careerList}>
+          <div>
+            <dt>2025.09 — 2026.07</dt>
+            <dd>
+              <strong>주식회사 비즈앤씨</strong>
+              <span>프론트엔드 · 사내 업무 도구 및 자료 총괄</span>
+              <p>의료용품 커머스 운영과 개선, 사내 업무 자료와 재고 조회 도구를 맡았습니다.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>2022.07 — 2024.11</dt>
+            <dd>
+              <strong>주식회사 웹컴퍼니</strong>
+              <span>퍼블리싱팀</span>
+              <p>기업·기관 사이트를 제작하며 반응형과 웹표준을 고려한 화면을 구현했습니다.</p>
+            </dd>
+          </div>
+        </dl>
+      </section>
 
       <div className={styles.note}>
         <span>잡담</span>

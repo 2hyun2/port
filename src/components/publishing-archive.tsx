@@ -106,7 +106,7 @@ export function PublishingArchive({
             <p className="eyebrow">에이전시 작업물</p>
             <h2 id="publishing-heading">여러 기업과 기관의<br />웹사이트를 만들었습니다.</h2>
             <p className="intro-description">에이전시에서 제작한 기업과 기관, 브랜드 사이트 작업물 중 일부를 소개합니다.</p>
-            <p className="publishing-contribution"><span>기여도</span><strong>{contribution}%</strong></p>
+            <p className="publishing-contribution"><span>전체 화면 구현</span><strong>{contribution}%</strong></p>
           </div>
         </div>
 

@@ -6,6 +6,7 @@ export type Project = {
   summary: string;
   focus: string;
   implementation: string;
+  progressNote?: string;
   siteUrl?: string;
   stack: string[];
   flow: string[];
@@ -25,6 +26,7 @@ export const projects: Project[] = [
     summary: "상품 탐색부터 프로모션, 배송 안내까지 운영한 의료용품 커머스 서비스",
     focus: "많은 상품과 카테고리, 프로모션 정보를 사용자가 다음 행동으로 자연스럽게 이어갈 수 있는 화면 흐름으로 정리했습니다.",
     implementation: "카테고리, 기획전, 추천 상품, 배송 안내처럼 성격이 다른 화면을 하나의 서비스 경험으로 연결하고 반응형 구조로 다듬었습니다.",
+    siteUrl: "https://medistorage.kr/",
     stack: ["HTML", "CSS", "JavaScript", "Cafe24 Front API"],
     flow: ["카테고리 탐색", "상품 발견", "혜택 확인", "배송 안내"],
     workItems: [
@@ -63,25 +65,25 @@ export const projects: Project[] = [
     ],
   },
   { slug: "inventory-tool", number: "02", kind: "사내 도구", title: "ERP 재고 조회 도구", summary: "상품·옵션·재고 정보를 한 화면에서 찾는 업무 지원 도구", focus: "조회 조건과 업무 권한을 고려해, 필요한 상품 정보를 빠르게 확인할 수 있는 검색 인터페이스를 만들었습니다.", implementation: "ERP 재고와 자사몰 상품 정보를 연결하고 검색과 정렬, 최근 조회 상태를 통해 MD·CS 업무 흐름을 줄였습니다.", stack: ["JavaScript", "Node.js", "Express", "ERP API"], flow: ["조건 확인", "상품·옵션 검색", "재고 조회", "업무 대응"] },
-  { slug: "badminton-app", number: "03", kind: "실시간 웹앱", title: "배드민턴 동호회 웹앱", summary: "출석부터 실시간 매칭, 경기 기록과 랭킹까지 연결한 웹앱", focus: "여러 사람이 보는 현재 상태를 하나의 흐름으로 연결하고, 운영자가 즉시 판단할 수 있는 화면을 구성했습니다.", implementation: "회원 상태, 실시간 매칭, 경기 결과와 랭킹 반영을 각 기능의 상태 변화에 맞춰 연결했습니다.", stack: ["React", "React Query", "Zustand", "Socket.io"], flow: ["출석 확인", "실시간 매칭", "경기 기록", "랭킹 반영"] },
+  { slug: "badminton-app", number: "03", kind: "실시간 웹앱", title: "배드민턴 동호회 웹앱", summary: "출석부터 실시간 매칭, 경기 기록과 랭킹까지 연결한 웹앱", focus: "여러 사람이 보는 현재 상태를 하나의 흐름으로 연결하고, 운영자가 즉시 판단할 수 있는 화면을 구성했습니다.", implementation: "회원 상태, 실시간 매칭, 경기 결과와 랭킹 반영을 각 기능의 상태 변화에 맞춰 연결했습니다.", progressNote: "현재 구현과 검증을 진행 중인 개인 프로젝트입니다.", stack: ["React", "React Query", "Zustand", "Socket.io", "Node.js", "Express", "MongoDB"], flow: ["출석 확인", "실시간 매칭", "경기 기록", "랭킹 반영"] },
   {
     slug: "storage-basket",
     number: "04",
     kind: "VIBE CODING",
-    title: "수납바구니",
-    summary: "Codex와 대화하며 화면, 상태, API, 데이터베이스까지 연결한 위치 기반 물건 관리 웹앱",
-    focus: "방·가구·서랍처럼 중첩되는 위치 구조와 검색·정렬·선택 상태를 나눠, 물건을 찾는 과정을 단순하게 만들었습니다.",
+    title: "우리집 공간록",
+    summary: "AI와 협업해 화면, 상태, API, 데이터베이스를 연결한 위치 기반 물건 관리 웹앱",
+    focus: "AI가 구현 초안과 탐색을 돕고, 요구사항 분해·구조 결정·예외 처리·검증은 직접 맡아 물건을 찾는 과정을 단순하게 만들었습니다.",
     implementation: "위치 트리에서 현재 선택한 범위와 물건 원본 데이터를 분리하고, 검색과 정렬 조건에 맞춰 보이는 결과를 구성했습니다.",
     siteUrl: "https://storage-basket.vercel.app/",
     stack: ["React", "Vite", "Tailwind CSS", "Zustand", "Express", "Supabase", "Codex"],
     flow: ["위치 선택", "하위 위치 필터", "검색·정렬", "물건 확인"],
     workItems: [
       {
-        title: "Codex로 기능을 쪼개고 구현",
-        summary: "기능을 한 번에 만들기보다 위치, 물건, 검색처럼 작은 단위로 나누고 Codex와 대화하며 화면과 로직을 반복해서 만들었습니다.",
+        title: "AI와 역할을 나누며 구현",
+        summary: "AI가 초안과 탐색을 돕게 하고, 요구사항을 기능 단위로 나누는 일과 구조 결정, 실제 동작 검증은 직접 맡았습니다.",
         details: [
           "위치 선택, 하위 위치 필터, 검색과 정렬, 물건 등록과 수정 흐름 구성",
-          "Codex를 사용해 React 화면과 Zustand 상태를 기능 단위로 연결",
+          "Codex를 활용해 React 화면과 Zustand 상태를 기능 단위로 연결",
         ],
       },
       {
