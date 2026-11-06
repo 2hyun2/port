@@ -23,12 +23,18 @@ header { position: sticky; top: 0; z-index: 10; display: flex; align-items: cent
 
 .header-nav { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .header-home { color: var(--color-point); font-size: var(--text-sm); font-weight: 800; letter-spacing: 0.08em; }
+.header-menu-button { display: none; color: var(--color-ink); background: transparent; border: 0; cursor: pointer; }
 .header-links { display: flex; align-items: center; gap: clamp(0.5rem, 2vw, 1.25rem); }
 .header-links a { white-space: nowrap; font-size: var(--text-sm); font-weight: 700; }
 .header-links a:hover { color: var(--color-point); }
 
-@media (max-width: 22rem) {
-    .header-links a:first-child { display: none; }
+@media (max-width: 40rem) {
+    .header-menu-button { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .header-menu-button .material-symbols-outlined { font-size: var(--text-2xl); }
+    .header-links { display: none; position: absolute; top: calc(100% + 1px); right: 0; left: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 0.5rem 1rem 1rem; background: var(--color-bg); border-bottom: 1px solid var(--color-point-strong); }
+    .header-links.is-open { display: flex; }
+    .header-links a { padding: 0.75rem 0; border-bottom: 1px solid var(--color-line); text-align: right; }
+    .header-links a:last-child { border-bottom: 0; }
 }
 
 footer {

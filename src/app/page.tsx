@@ -19,6 +19,11 @@ export default function Home() {
             <p className="intro-description">퍼블리싱을 바탕으로 서비스를 만들며, 화면이 왜 그렇게 동작해야 하는지부터 확인합니다. 프론트엔드를 중심으로 API와 데이터 흐름까지 연결해 온 개발자입니다.</p>
             <a className="solid-link" href="#projects">대표 프로젝트 보기</a>
           </div>
+        </div>
+      </section>
+
+      <section id="about" className="home-slide">
+        <div className="home-layout-inner">
           <div className="home-intro-box principle-card">
             <p className="eyebrow">작업 기준</p>
             <ol>
@@ -27,11 +32,6 @@ export default function Home() {
               <li><span>03</span> 실제 사용 과정에서 예외와 어긋나는 흐름을 다시 확인합니다.</li>
             </ol>
           </div>
-        </div>
-      </section>
-
-      <section id="about" className="home-slide">
-        <div className="home-layout-inner">
           <div className="home-intro-box principle-card">
             <p className="eyebrow">간단 소개</p>
             <ol>
