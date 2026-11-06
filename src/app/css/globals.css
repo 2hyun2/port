@@ -31,6 +31,8 @@
   --leading-loose: 2;
 }
 
+/* 반응형 기준: 모바일 47.99rem 이하, 기본 48rem 이상, 넓은 화면 72rem 이상 */
+
 body { font-size: var(--text-lg); line-height: var(--leading-normal); color: var(--color-ink); background-color: var(--color-bg); word-break: keep-all; overflow-wrap: break-word; }
 
 h1 { font-size: var(--text-5xl); line-height: var(--leading-none); }
