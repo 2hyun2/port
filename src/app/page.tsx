@@ -25,14 +25,6 @@ export default function Home() {
       <section id="about" className="home-slide">
         <div className="home-layout-inner">
           <div className="home-intro-box principle-card">
-            <p className="eyebrow">작업 기준</p>
-            <ol>
-              <li><span>01</span> 사용자 흐름과 필요한 정보를 먼저 정리합니다.</li>
-              <li><span>02</span> 화면 상태와 API 응답이 어떻게 이어지는지 나눠 봅니다.</li>
-              <li><span>03</span> 실제 사용 과정에서 예외와 어긋나는 흐름을 다시 확인합니다.</li>
-            </ol>
-          </div>
-          <div className="home-intro-box principle-card">
             <p className="eyebrow">간단 소개</p>
             <ol>
               <li><span>01</span> 재작업은 싫어 기획부터 꼼꼼히</li>
@@ -40,6 +32,14 @@ export default function Home() {
               <li><span>03</span> AI는 만능이 아니야 검증하고 넘기자</li>
             </ol>
             <Link href="/about" className="solid-link">간단 소개 더보기</Link>
+          </div>
+          <div className="home-intro-box principle-card">
+            <p className="eyebrow">작업 기준</p>
+            <ol>
+              <li><span>01</span> 사용자 흐름과 필요한 정보를 먼저 정리합니다.</li>
+              <li><span>02</span> 화면 상태와 API 응답이 어떻게 이어지는지 나눠 봅니다.</li>
+              <li><span>03</span> 실제 사용 과정에서 예외와 어긋나는 흐름을 다시 확인합니다.</li>
+            </ol>
           </div>
         </div>
       </section>

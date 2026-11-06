@@ -111,9 +111,12 @@
   .nextLinks a { padding-right: 1rem; }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 47.99rem) {
   .page { padding-top: 1.5rem; }
+  .hero { gap: 0.75rem; padding: 2.5rem 0 2rem; }
   .hero h1 { font-size: var(--text-4xl); }
+  .block { gap: 0.75rem; padding: 1.5rem 0; }
+  .block h2 { flex-basis: auto; }
   .summary, .block > p { font-size: var(--text-base); }
   .nextLinks a + a { padding-left: 0; }
 }

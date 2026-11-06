@@ -28,7 +28,7 @@ header { position: sticky; top: 0; z-index: 10; display: flex; align-items: cent
 .header-links a { white-space: nowrap; font-size: var(--text-sm); font-weight: 700; }
 .header-links a:hover { color: var(--color-point); }
 
-@media (max-width: 40rem) {
+@media (max-width: 47.99rem) {
     .header-menu-button { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
     .header-menu-button .material-symbols-outlined { font-size: var(--text-2xl); }
     .header-links { display: none; position: absolute; top: calc(100% + 1px); right: 0; left: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 0.5rem 1rem 1rem; background: var(--color-bg); border-bottom: 1px solid var(--color-point-strong); }
@@ -65,7 +65,7 @@ footer {
 .footer-top-link .material-symbols-outlined { font-size: var(--text-lg); }
 .footer-top-link:hover { color: var(--color-point); }
 
-@media (max-width: 40rem) {
+@media (max-width: 47.99rem) {
     footer { margin-top: 3rem; }
     .footer-inner { align-items: flex-start; flex-direction: column; }
 }
