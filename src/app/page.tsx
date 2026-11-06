@@ -16,15 +16,15 @@ export default function Home() {
           <div className="home-intro-box">
             <p className="eyebrow">프론트엔드 개발자</p>
             <h2>흐름을 이해하고, 작동하는 화면을 만듭니다.</h2>
-            <p className="intro-description">운영 서비스와 제품 단위 프로젝트에서 사용자 행동, 화면 상태, 데이터를 연결하는 프론트엔드를 구현합니다.</p>
+            <p className="intro-description">퍼블리싱을 바탕으로 서비스를 만들며, 화면이 왜 그렇게 동작해야 하는지부터 확인합니다. 프론트엔드를 중심으로 API와 데이터 흐름까지 연결해 온 개발자입니다.</p>
             <a className="solid-link" href="#projects">대표 프로젝트 보기</a>
           </div>
           <div className="home-intro-box principle-card">
             <p className="eyebrow">작업 기준</p>
             <ol>
-              <li><span>01</span> 사용자 흐름을 먼저 정리합니다.</li>
-              <li><span>02</span> 상태와 데이터의 역할을 나눕니다.</li>
-              <li><span>03</span> 실제 브라우저에서 다시 확인합니다.</li>
+              <li><span>01</span> 사용자 흐름과 필요한 정보를 먼저 정리합니다.</li>
+              <li><span>02</span> 화면 상태와 API 응답이 어떻게 이어지는지 나눠 봅니다.</li>
+              <li><span>03</span> 실제 사용 과정에서 예외와 어긋나는 흐름을 다시 확인합니다.</li>
             </ol>
           </div>
         </div>

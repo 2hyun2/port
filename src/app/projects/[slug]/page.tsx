@@ -25,7 +25,8 @@ export default async function ProjectPage({ params }: PageProps) {
         <h1>{project.title}</h1>
         <p className={styles.summary}>{project.summary}</p>
         {project.progressNote && <p className={styles.progressNote}>{project.progressNote}</p>}
-        {project.siteUrl && <a className={styles.siteLink} href={project.siteUrl} target="_blank" rel="noreferrer">{project.title} 열기</a>}
+        {project.siteUrl && <a className={styles.siteLink} href={project.siteUrl} target="_blank" rel="noreferrer">서비스 열기</a>}
+        {project.repositoryUrl && <a className={styles.siteLink} href={project.repositoryUrl} target="_blank" rel="noreferrer">GitHub에서 코드 보기</a>}
       </section>
 
       <section className={styles.content}>

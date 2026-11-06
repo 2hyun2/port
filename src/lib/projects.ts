@@ -8,6 +8,7 @@ export type Project = {
   implementation: string;
   progressNote?: string;
   siteUrl?: string;
+  repositoryUrl?: string;
   stack: string[];
   flow: string[];
   workItems?: {
@@ -65,7 +66,7 @@ export const projects: Project[] = [
     ],
   },
   { slug: "inventory-tool", number: "02", kind: "사내 도구", title: "ERP 재고 조회 도구", summary: "상품·옵션·재고 정보를 한 화면에서 찾는 업무 지원 도구", focus: "조회 조건과 업무 권한을 고려해, 필요한 상품 정보를 빠르게 확인할 수 있는 검색 인터페이스를 만들었습니다.", implementation: "ERP 재고와 자사몰 상품 정보를 연결하고 검색과 정렬, 최근 조회 상태를 통해 MD·CS 업무 흐름을 줄였습니다.", stack: ["JavaScript", "Node.js", "Express", "ERP API"], flow: ["조건 확인", "상품·옵션 검색", "재고 조회", "업무 대응"] },
-  { slug: "badminton-app", number: "03", kind: "실시간 웹앱", title: "배드민턴 동호회 웹앱", summary: "출석부터 실시간 매칭, 경기 기록과 랭킹까지 연결한 웹앱", focus: "여러 사람이 보는 현재 상태를 하나의 흐름으로 연결하고, 운영자가 즉시 판단할 수 있는 화면을 구성했습니다.", implementation: "회원 상태, 실시간 매칭, 경기 결과와 랭킹 반영을 각 기능의 상태 변화에 맞춰 연결했습니다.", progressNote: "현재 구현과 검증을 진행 중인 개인 프로젝트입니다.", stack: ["React", "React Query", "Zustand", "Socket.io", "Node.js", "Express", "MongoDB"], flow: ["출석 확인", "실시간 매칭", "경기 기록", "랭킹 반영"] },
+  { slug: "badminton-app", number: "03", kind: "실시간 웹앱", title: "배드민턴 동호회 웹앱", summary: "출석부터 실시간 매칭, 경기 기록과 랭킹까지 연결한 웹앱", focus: "여러 사람이 보는 현재 상태를 하나의 흐름으로 연결하고, 운영자가 즉시 판단할 수 있는 화면을 구성했습니다.", implementation: "회원, 출석, 매칭, 경기 기록 데이터를 REST API로 연결하고, 각 요청 결과와 실시간 상태 변화가 화면에 이어지도록 구성했습니다.", progressNote: "현재 구현과 검증을 진행 중인 개인 프로젝트입니다.", repositoryUrl: "https://github.com/2hyun2/badminton-webapp", stack: ["React", "React Query", "Zustand", "Socket.io", "REST API", "Node.js", "Express", "MongoDB"], flow: ["출석 확인", "실시간 매칭", "경기 기록", "랭킹 반영"] },
   {
     slug: "storage-basket",
     number: "04",
