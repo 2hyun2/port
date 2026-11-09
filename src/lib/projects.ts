@@ -9,6 +9,8 @@ export type Project = {
   progressNote?: string;
   siteUrl?: string;
   repositoryUrl?: string;
+  repositoryLabel?: string;
+  stackLabel?: string;
   stack: string[];
   flow: string[];
   workItems?: {
@@ -101,6 +103,47 @@ export const projects: Project[] = [
         details: [
           "같은 위치 안에서 이름이 중복되지 않도록 처리",
           "자기 하위 위치로 이동하는 잘못된 트리 변경 차단",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "badminton-club-platform",
+    number: "05",
+    kind: "신규 플랫폼 · 개발 예정",
+    title: "배드민턴 동호회 운영 플랫폼",
+    summary: "여러 동호회의 회원, 게스트, 출석, 경기, 회비와 공개 홈페이지를 관리하는 웹·앱 플랫폼",
+    focus: "기존 단일 동호회 운영 웹앱과 별개로, 여러 동호회의 소속·권한·운영 규칙을 처음부터 설계하고 있습니다.",
+    implementation: "사용자 흐름과 권한 정책, 데이터 모델을 먼저 정리하고 Next.js 웹 MVP에서 핵심 운영 흐름을 검증한 뒤 React Native 앱으로 확장할 예정입니다.",
+    progressNote: "사용자 흐름, 권한 정책, 데이터 모델과 구현 로드맵을 정리했습니다. 2026년 안에 Next.js 웹 MVP 공개를 목표로 합니다.",
+    repositoryUrl: "https://github.com/2hyun2/badminton-club-platform",
+    repositoryLabel: "GitHub에서 설계 문서 보기",
+    stackLabel: "예정 기술 구성",
+    stack: ["Next.js", "Node.js", "Express", "Socket.io", "PostgreSQL", "React Native", "AWS"],
+    flow: ["동호회 탐색", "가입·게스트 신청", "운영 기능", "웹·앱 확장"],
+    workItems: [
+      {
+        title: "여러 동호회를 위한 구조 설계",
+        summary: "한 앱 회원이 여러 동호회에 소속될 수 있는 플랫폼을 전제로, 회원과 동호회, 소속 정보를 분리했습니다.",
+        details: [
+          "동호회별 권한, 등급, 레이팅, 회비 상태를 소속 정보 단위로 관리",
+          "공개 동호회 홈페이지와 로그인 뒤 운영 화면을 하나의 서비스 흐름으로 설계",
+        ],
+      },
+      {
+        title: "게스트 흐름과 개인정보 기준",
+        summary: "정식 회원과 비회원 게스트 신청을 구분하고, 운영에 필요한 정보만 남도록 데이터 흐름을 설계했습니다.",
+        details: [
+          "게스트 신청과 동호회 가입을 별도 흐름으로 분리",
+          "비회원 게스트의 식별 정보는 운동 종료 뒤 정리할 수 있도록 보관 기준 설정",
+        ],
+      },
+      {
+        title: "웹 MVP부터 앱 확장까지",
+        summary: "Next.js 웹에서 핵심 사용자 흐름과 운영 기능을 먼저 검증한 뒤 공통 API와 도메인 규칙을 React Native 앱에서도 재사용할 계획입니다.",
+        details: [
+          "웹, API, 모바일과 공통 타입·도메인·UI 토큰을 분리하는 모노레포 구조 계획",
+          "웹에서 검증한 권한과 운영 규칙을 앱에서도 같은 계약으로 사용하도록 구성",
         ],
       },
     ],

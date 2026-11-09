@@ -17,7 +17,7 @@ export default async function ProjectPage({ params }: PageProps) {
     <main className={styles.page}>
       <nav className={styles.nav}>
         <Link className={styles.backLink} href="/"><span>←</span> 포트폴리오</Link>
-        <span>{project.number} / 04</span>
+        <span>{project.number} / {String(projects.length).padStart(2, "0")}</span>
       </nav>
 
       <section className={styles.hero}>
@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: PageProps) {
         <p className={styles.summary}>{project.summary}</p>
         {project.progressNote && <p className={styles.progressNote}>{project.progressNote}</p>}
         {project.siteUrl && <a className={styles.siteLink} href={project.siteUrl} target="_blank" rel="noreferrer">서비스 열기</a>}
-        {project.repositoryUrl && <a className={styles.siteLink} href={project.repositoryUrl} target="_blank" rel="noreferrer">GitHub에서 코드 보기</a>}
+        {project.repositoryUrl && <a className={styles.siteLink} href={project.repositoryUrl} target="_blank" rel="noreferrer">{project.repositoryLabel ?? "GitHub에서 코드 보기"}</a>}
       </section>
 
       <section className={styles.content}>
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </>
         )}
         <article className={styles.block}>
-          <h2>사용 기술</h2>
+          <h2>{project.stackLabel ?? "사용 기술"}</h2>
           <div className={styles.stackList}>
             {project.stack.map((skill) => <span key={skill}>{skill}</span>)}
           </div>
