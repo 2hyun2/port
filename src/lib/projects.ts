@@ -11,6 +11,7 @@ export type Project = {
   repositoryUrl?: string;
   repositoryLabel?: string;
   stackLabel?: string;
+  stackStatus?: "used" | "planned";
   stack: string[];
   flow: string[];
   workItems?: {
@@ -114,11 +115,12 @@ export const projects: Project[] = [
     title: "배드민턴 동호회 운영 플랫폼",
     summary: "여러 동호회의 회원, 게스트, 출석, 경기, 회비와 공개 홈페이지를 관리하는 웹·앱 플랫폼",
     focus: "기존 단일 동호회 운영 웹앱과 별개로, 여러 동호회의 소속·권한·운영 규칙을 처음부터 설계하고 있습니다.",
-    implementation: "사용자 흐름과 권한 정책, 데이터 모델을 먼저 정리하고 Next.js 웹 MVP에서 핵심 운영 흐름을 검증한 뒤 React Native 앱으로 확장할 예정입니다.",
-    progressNote: "사용자 흐름, 권한 정책, 데이터 모델과 구현 로드맵을 정리했습니다. 2026년 안에 Next.js 웹 MVP 공개를 목표로 합니다.",
+    implementation: "사용자 흐름과 권한 정책, 데이터 모델을 먼저 정리하고 Next.js 웹 기반과 초기 진입 UI를 만들고 있습니다. 이후 웹·API·모바일이 공통 타입과 도메인 규칙을 공유할 수 있도록 모노레포 구조로 확장할 예정입니다.",
+    progressNote: "사용자 흐름, 권한 정책, 데이터 모델과 구현 로드맵을 정리하고 Next.js 웹 기반과 초기 진입 UI를 구현했습니다. 이후 API와 React Native 앱을 공통 타입과 도메인 규칙으로 묶는 모노레포 확장을 계획합니다. 2026년 안에 웹 MVP 공개를 목표로 합니다.",
     repositoryUrl: "https://github.com/2hyun2/badminton-club-platform",
     repositoryLabel: "GitHub에서 설계 문서 보기",
     stackLabel: "예정 기술 구성",
+    stackStatus: "planned",
     stack: ["Next.js", "Node.js", "Express", "Socket.io", "PostgreSQL", "React Native", "AWS"],
     flow: ["동호회 탐색", "가입·게스트 신청", "운영 기능", "웹·앱 확장"],
     workItems: [
@@ -139,11 +141,11 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "웹 MVP부터 앱 확장까지",
-        summary: "Next.js 웹에서 핵심 사용자 흐름과 운영 기능을 먼저 검증한 뒤 공통 API와 도메인 규칙을 React Native 앱에서도 재사용할 계획입니다.",
+        title: "웹 MVP와 모노레포 확장",
+        summary: "Next.js 웹 기반에서 초기 흐름을 만들고, 웹·API·모바일이 공통 타입과 도메인 규칙을 공유하는 모노레포 구조로 확장할 계획입니다.",
         details: [
-          "웹, API, 모바일과 공통 타입·도메인·UI 토큰을 분리하는 모노레포 구조 계획",
-          "웹에서 검증한 권한과 운영 규칙을 앱에서도 같은 계약으로 사용하도록 구성",
+          "웹, API, 모바일을 역할별로 나누고 공통 타입·도메인 규칙을 공유하는 구조 설계",
+          "웹에서 검증한 권한과 운영 규칙을 API와 앱에서도 같은 계약으로 사용하도록 구성",
         ],
       },
     ],

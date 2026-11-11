@@ -28,10 +28,49 @@ export function AboutMe() {
           </div>
           <div>
             <dt>요즘 관심</dt>
-            <dd>AI를 개발 과정에 활용하되, 나온 결과를 그대로 넘기지 않고 실제 동작과 예외를 직접 검증하는 방식에 관심이 많습니다.</dd>
+            <dd>다음 작업에서도 바로 쓸 수 있도록 요구사항과 결정 내용을 남기고, 반복되는 일을 줄이는 방식에 관심이 많습니다.</dd>
           </div>
         </dl>
       </div>
+
+      <section className={styles.aiWorkflow}>
+        <div className={styles.workflowIntro}>
+          <div>
+            <p className={styles.workflowLabel}>AI와 작업하는 방식</p>
+            <h3>결정은 내가 하고,<br />반복은 AI와 줄입니다.</h3>
+          </div>
+          <p>AI가 결과를 대신 내는 흐름보다, 요구사항을 구체화하고 구현과 검증을 빠르게 반복하는 흐름을 만듭니다.</p>
+        </div>
+
+        <ol className={styles.workflowSteps}>
+          <li>
+            <span>01</span>
+            <div>
+              <p>기록 <em>Obsidian</em></p>
+              <strong>요구사항과 결정 내용 정리</strong>
+              <small>다음 작업, 정책, 바뀐 이유를 남겨 흐름이 끊기지 않게 합니다.</small>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <p>구현 <em>Claude</em></p>
+              <strong>요구사항을 코드로 구체화</strong>
+              <small>정리한 요구사항을 바탕으로 화면과 기능을 구현하고, 필요한 선택지를 비교합니다.</small>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <p>검증 <em>Codex</em></p>
+              <strong>코드와 실제 화면 확인</strong>
+              <small>타입·빌드 검사와 화면 확인을 반복하며, 어긋나는 흐름을 수정합니다.</small>
+            </div>
+          </li>
+        </ol>
+
+        <p className={styles.workflowNote}><strong>판단과 검증은 직접 합니다.</strong> AI가 제안한 결과는 기존 구조, 데이터 흐름, 예외 상황에 맞는지 확인한 뒤 반영합니다.</p>
+      </section>
 
       <section className={styles.career}>
         <p className={styles.careerLabel}>경력</p>

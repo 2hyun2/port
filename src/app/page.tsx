@@ -9,6 +9,12 @@ import { livePublishingWorks, publishingArchive } from "@/lib/publishing";
 import "./css/main.css"
 
 export default function Home() {
+  const usedStacks = [...new Set(
+    projects
+      .filter((project) => project.stackStatus !== "planned")
+      .flatMap((project) => project.stack),
+  )];
+
   return (
     <main className="inner" data-page="home">
       <section id="top" className="home-slide">
@@ -17,6 +23,12 @@ export default function Home() {
             <p className="eyebrow">프론트엔드 개발자</p>
             <h2>흐름을 이해하고, 작동하는 화면을 만듭니다.</h2>
             <p className="intro-description">퍼블리싱을 바탕으로 서비스를 만들며, 화면이 왜 그렇게 동작해야 하는지부터 확인합니다. 프론트엔드를 중심으로 API와 데이터 흐름까지 연결해 온 개발자입니다.</p>
+            <div className="intro-stack">
+              <p>프로젝트에서 사용한 기술</p>
+              <div className="intro-stack-list">
+                {usedStacks.map((stack) => <span key={stack}>{stack}</span>)}
+              </div>
+            </div>
             <a className="solid-link" href="#projects">대표 프로젝트 보기</a>
           </div>
         </div>
