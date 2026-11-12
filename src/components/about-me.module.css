@@ -96,7 +96,7 @@
   gap: 1rem;
   padding: var(--text-3xl) var(--text-xl);
   color: var(--color-surface);
-  background: var(--color-ink);
+  background: var(--color-navy);
 }
 
 .workflowLabel {

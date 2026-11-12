@@ -1,27 +1,29 @@
 .section {
   display: grid;
-  gap: 1rem;
-  margin-top: min(10svh, 5rem);
-  padding-block: 2rem;
+  gap: 2rem;
+  padding-top: clamp(4.5rem, 10vw, 8rem);
 }
 
-.intro,
 .form,
 .complete {
   border: 1px solid var(--color-line);
-  border-radius: var(--text-sm);
+  border-radius: 1.25rem;
   background: var(--color-surface);
 }
 
+/* 다른 섹션 제목과 같은 형태: 박스 없이 왼쪽에 고정 */
 .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--text-3xl) var(--text-xl);
 }
 
 .intro h2 {
   margin-top: 1rem;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
 }
 
 .description {
@@ -70,9 +72,11 @@
   font-size: var(--text-sm);
 }
 
+/* 좁은 화면에서도 별 다섯 개가 한 줄에 들어가도록 균등 분배 */
 .ratingOptions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, auto));
+  justify-content: space-between;
   gap: 0.25rem;
 }
 
@@ -251,10 +255,14 @@
 @media (min-width: 48rem) {
   .section {
     grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
-    align-items: stretch;
+    align-items: start;
   }
 
-  .intro,
+  .intro {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+  }
+
   .form,
   .complete {
     padding: var(--text-3xl) var(--text-xl);

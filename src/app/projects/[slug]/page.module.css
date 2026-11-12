@@ -42,7 +42,7 @@
   letter-spacing: 0.1em;
 }
 
-.hero h1 { font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl)); }
+.hero h1 { font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl)); font-weight: 800; letter-spacing: -0.045em; line-height: 1.1; animation: rise-in 0.9s var(--ease-out) both; }
 
 .summary { color: var(--color-muted); font-size: var(--text-lg); }
 .progressNote { padding: 0.5rem 0.75rem; color: var(--color-point-strong); font-size: var(--text-sm); font-weight: 700; border: 1px solid var(--color-point-soft); background: var(--color-point-soft); }
@@ -59,9 +59,10 @@
   border-bottom: 1px solid var(--color-line);
 }
 
-.block h2 { display: flex; flex: 0 0 11rem; flex-direction: column; gap: 0.25rem; font-size: var(--text-sm); line-height: var(--leading-normal); letter-spacing: 0.06em; }
+.block h2 { display: flex; flex: 0 0 15rem; flex-direction: column; gap: 0.375rem; font-size: var(--text-lg); font-weight: 700; line-height: var(--leading-snug); letter-spacing: -0.02em; }
+.block h2 span { font-size: var(--text-sm); letter-spacing: 0.04em; }
 .block h2 span { color: var(--color-point); }
-.block > p, .flowList, .stackList, .workCopy { flex: 1; }
+.block > p, .stackList, .workCopy { flex: 1; }
 .block > p { color: var(--color-muted); font-size: var(--text-lg); }
 
 .workCopy { display: flex; flex-direction: column; gap: 1rem; }
@@ -70,18 +71,32 @@
 .workList li { display: flex; align-items: flex-start; gap: 0.5rem; color: var(--color-ink); font-size: var(--text-base); }
 .workList li::before { flex: 0 0 auto; width: 0.375rem; height: 0.375rem; margin-top: 0.6rem; content: ""; background-color: var(--color-point); border-radius: 50%; }
 
-.flowList { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 
-.flowItem {
+.gallery {
   display: flex;
-  flex: 1 1 11rem;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--color-line);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: clamp(3rem, 8vw, 5rem);
 }
 
-.flowItem span { color: var(--color-point); font-size: var(--text-sm); font-weight: 800; }
+.gallery figure { display: flex; flex-direction: column; gap: 0.625rem; min-width: 0; }
+/* 데스크톱 2장 + 모바일 1장이 한 줄에 들어가도록 */
+.shotDesktop { flex: 1 1 22rem; }
+.shotMobile { flex: 0 1 12rem; }
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.75rem 2rem rgb(15 23 42 / 0.08);
+}
+
+.shotMobile img { border-radius: 1.25rem; }
+.gallery figcaption { color: var(--color-muted); font-size: var(--text-sm); }
 
 .stackList { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.5rem; }
 .stackList span { padding: 0.25rem 0.5rem; color: var(--color-muted); font-size: var(--text-sm); border: 1px solid var(--color-line); }
@@ -119,4 +134,24 @@
   .block h2 { flex-basis: auto; }
   .summary, .block > p { font-size: var(--text-base); }
   .nextLinks a + a { padding-left: 0; }
+}
+
+.kind, .summary, .progressNote, .links { animation: rise-in 0.9s var(--ease-out) both; }
+.summary { animation-delay: 120ms; }
+.progressNote, .links { animation-delay: 220ms; }
+.siteLink { padding: 0.5rem 1rem; border: 1px solid var(--color-point); border-radius: 999px; transition: color 0.2s ease, background-color 0.2s ease; }
+.siteLink:hover { color: var(--color-surface); background-color: var(--color-point); }
+.gallery img { transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out); }
+
+@media (hover: hover) {
+  .gallery img:hover { transform: translateY(-0.25rem); box-shadow: 0 1.5rem 3rem rgb(15 23 42 / 0.14); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(1.25rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1, .kind, .summary, .progressNote, .links { animation: none; }
 }

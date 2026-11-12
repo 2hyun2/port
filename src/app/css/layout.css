@@ -14,12 +14,11 @@
 
 /* layout */
 html:has([data-page="home"]) {
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
 }
 
-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; width: min(100%, 80rem); height: var(--header-height); margin: 0 auto; background-color: var(--color-bg); border-bottom: 1px solid var(--color-point-strong); padding: 0 1rem; }
+header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; width: min(100%, 80rem); height: var(--header-height); margin: 0 auto; background-color: rgb(247 247 244 / 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-line); padding: 0 1rem; }
 
 .header-nav { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .header-home { color: var(--color-point); font-size: var(--text-sm); font-weight: 800; letter-spacing: 0.08em; }

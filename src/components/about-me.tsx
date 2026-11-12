@@ -39,7 +39,7 @@ export function AboutMe() {
             <p className={styles.workflowLabel}>AI와 작업하는 방식</p>
             <h3>결정은 내가 하고,<br />반복은 AI와 줄입니다.</h3>
           </div>
-          <p>AI가 결과를 대신 내는 흐름보다, 요구사항을 구체화하고 구현과 검증을 빠르게 반복하는 흐름을 만듭니다.</p>
+          <p>AI에게 결과를 맡기지 않습니다. 요구사항과 규칙은 제가 정하고, AI로 초안을 빠르게 만든 뒤 리뷰와 검증을 반복합니다.</p>
         </div>
 
         <ol className={styles.workflowSteps}>
@@ -48,28 +48,28 @@ export function AboutMe() {
             <div>
               <p>기록 <em>Obsidian</em></p>
               <strong>요구사항과 결정 내용 정리</strong>
-              <small>다음 작업, 정책, 바뀐 이유를 남겨 흐름이 끊기지 않게 합니다.</small>
+              <small>다음 작업, 정책, 바뀐 이유를 남겨 작업이 끊기지 않게 합니다.</small>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <p>구현 <em>Claude</em></p>
-              <strong>요구사항을 코드로 구체화</strong>
-              <small>정리한 요구사항을 바탕으로 화면과 기능을 구현하고, 필요한 선택지를 비교합니다.</small>
+              <p>초안 <em>Claude · Codex</em></p>
+              <strong>기능 단위로 코드 초안 작성</strong>
+              <small>정리한 요구사항을 기능 단위로 나눠 초안을 만들고, 구현 선택지를 비교합니다.</small>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <p>검증 <em>Codex</em></p>
-              <strong>코드와 실제 화면 확인</strong>
-              <small>타입·빌드 검사와 화면 확인을 반복하며, 어긋나는 흐름을 수정합니다.</small>
+              <p>검증 <em>직접</em></p>
+              <strong>리뷰와 예외 테스트</strong>
+              <small>타입·빌드 검사, 실제 화면 테스트로 AI가 놓친 예외를 찾아 고칩니다.</small>
             </div>
           </li>
         </ol>
 
-        <p className={styles.workflowNote}><strong>판단과 검증은 직접 합니다.</strong> AI가 제안한 결과는 기존 구조, 데이터 흐름, 예외 상황에 맞는지 확인한 뒤 반영합니다.</p>
+        <p className={styles.workflowNote}><strong>판단과 검증은 직접 합니다.</strong> 예를 들어 우리집 공간록에서는 AI 초안이 위치를 자기 하위로 옮기는 경우를 막지 않아 트리가 순환하는 문제를 직접 찾아 서버 규칙으로 차단했습니다.</p>
       </section>
 
       <section className={styles.career}>
@@ -80,7 +80,7 @@ export function AboutMe() {
             <dd>
               <strong>주식회사 비즈앤씨</strong>
               <span>프론트엔드 · 사내 업무 도구 및 자료 총괄</span>
-              <p>의료용품 커머스 운영과 개선, 사내 업무 자료와 재고 조회 도구를 맡았습니다.</p>
+              <p>의료용품 커머스 운영과 개선, 사내 업무 자료와 재고 조회 도구를 맡았습니다. 담당 부서의 엑셀 수작업을 AI와 설계한 Node.js 자동화로 바꿔 작업 시간을 5~20배 줄였습니다.</p>
             </dd>
           </div>
           <div>
@@ -97,8 +97,7 @@ export function AboutMe() {
       <div className={styles.note}>
         <span>잡담</span>
         <p>
-          몇 번 돌아가는 상황이 있어도 개발을 놓지는 못했습니다.
-          <br /> 다른 선택지를 제안받은 적도 있지만, 저는 여전히 코딩할 때 가장 즐겁고 더 잘해보고 싶습니다.
+          다른 길도 고민해 봤지만, 결국 가장 즐겁고 더 잘하고 싶은 일은 코딩이었습니다.
         </p>
       </div>
     </section>

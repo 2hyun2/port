@@ -5,8 +5,16 @@ import { getProject, projects } from "@/lib/projects";
 import styles from "./page.module.css";
 
 type PageProps = { params: Promise<{ slug: string }> };
-export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> { const { slug } = await params; const project = getProject(slug); return { title: project ? `${project.title} | 이정현` : "Project | 이정현" }; }
+
+export function generateStaticParams() {
+  return projects.flatMap(({ slug, aliases = [] }) => [slug, ...aliases].map((value) => ({ slug: value })));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProject(slug);
+  return { title: project ? `${project.title} | 이정현` : "Project | 이정현" };
+}
 
 export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
@@ -16,7 +24,7 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <main className={styles.page}>
       <nav className={styles.nav}>
-        <Link className={styles.backLink} href="/"><span>←</span> 포트폴리오</Link>
+        <Link className={styles.backLink} href="/#projects"><span>←</span> 포트폴리오</Link>
         <span>{project.number} / {String(projects.length).padStart(2, "0")}</span>
       </nav>
 
@@ -25,49 +33,44 @@ export default async function ProjectPage({ params }: PageProps) {
         <h1>{project.title}</h1>
         <p className={styles.summary}>{project.summary}</p>
         {project.progressNote && <p className={styles.progressNote}>{project.progressNote}</p>}
-        {project.siteUrl && <a className={styles.siteLink} href={project.siteUrl} target="_blank" rel="noreferrer">서비스 열기</a>}
-        {project.repositoryUrl && <a className={styles.siteLink} href={project.repositoryUrl} target="_blank" rel="noreferrer">{project.repositoryLabel ?? "GitHub에서 코드 보기"}</a>}
+        {project.links && (
+          <div className={styles.links}>
+            {project.links.map((link) => (
+              <a key={link.href} className={styles.siteLink} href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>
+            ))}
+          </div>
+        )}
       </section>
 
+      {project.images && (
+        <section className={styles.gallery} aria-label="프로젝트 화면">
+          {project.images.map((image) => (
+            <figure key={image.src} data-reveal className={image.device === "mobile" ? styles.shotMobile : styles.shotDesktop}>
+              {/* eslint-disable-next-line @next/next/no-img-element -- static export에서 원본 이미지를 그대로 사용 */}
+              <img src={image.src} alt={image.alt} loading="lazy" />
+              <figcaption>{image.caption}</figcaption>
+            </figure>
+          ))}
+        </section>
+      )}
+
       <section className={styles.content}>
-        {project.workItems ? (
-          <>
-            {project.workItems.map((item, index) => (
-              <article className={styles.block} key={item.title}>
-                <h2><span>{String(index + 1).padStart(2, "0")}</span>{item.title}</h2>
-                <div className={styles.workCopy}>
-                  <p>{item.summary}</p>
-                  <ul className={styles.workList}>
-                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </>
-        ) : (
-          <>
-            <article className={styles.block}>
-              <h2>해결하려던 문제</h2>
-              <p>{project.focus}</p>
-            </article>
-            <article className={styles.block}>
-              <h2>구현 내용</h2>
-              <p>{project.implementation}</p>
-            </article>
-            <article className={styles.block}>
-              <h2>사용 흐름</h2>
-              <div className={styles.flowList}>
-                {project.flow.map((step, index) => (
-                  <div className={styles.flowItem} key={step}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <strong>{step}</strong>
-                  </div>
-                ))}
-              </div>
-            </article>
-          </>
-        )}
-        <article className={styles.block}>
+        <article className={styles.block} data-reveal>
+          <h2>주요 고민</h2>
+          <p>{project.focus}</p>
+        </article>
+        {project.workItems.map((item, index) => (
+          <article className={styles.block} key={item.title} data-reveal>
+            <h2><span>{String(index + 1).padStart(2, "0")}</span>{item.title}</h2>
+            <div className={styles.workCopy}>
+              <p>{item.summary}</p>
+              <ul className={styles.workList}>
+                {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+        <article className={styles.block} data-reveal>
           <h2>{project.stackLabel ?? "사용 기술"}</h2>
           <div className={styles.stackList}>
             {project.stack.map((skill) => <span key={skill}>{skill}</span>)}

@@ -7,6 +7,7 @@ import "./css/layout.css"
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { RevealObserver } from "@/components/reveal-observer";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -34,14 +35,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <head>
+        {/* JS가 켜진 경우에만 등장 애니메이션 대상을 숨김 (JS가 없으면 그대로 보임) */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
       </head>
       <body>
         <Header />
         {children}
         <Footer />
+        <RevealObserver />
       </body>
     </html>
   );

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 개인 메모와 로컬 도구 설정 (공개하지 않음)
+/개발자_특징_메모.md
+/작업_규칙.md
+/.claude/

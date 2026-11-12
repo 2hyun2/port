@@ -9,6 +9,10 @@
   --color-point: #3156d9;
   --color-point-strong: #203b9c;
   --color-point-soft: #e8edff;
+  --color-navy: #0e1733;
+  --color-navy-line: rgb(255 255 255 / 0.12);
+  --color-navy-muted: #a7b2cc;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
   --text-xs: 0.75rem; /* 12px */
   --text-sm: 0.875rem; /* 14px */
@@ -33,7 +37,8 @@
 
 /* 반응형 기준: 모바일 47.99rem 이하, 기본 48rem 이상, 넓은 화면 72rem 이상 */
 
-body { font-size: var(--text-lg); line-height: var(--leading-normal); color: var(--color-ink); background-color: var(--color-bg); word-break: keep-all; overflow-wrap: break-word; }
+html { overflow-x: clip; }
+body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; font-size: var(--text-lg); line-height: var(--leading-normal); color: var(--color-ink); background-color: var(--color-bg); word-break: keep-all; overflow-wrap: break-word; }
 
 h1 { font-size: var(--text-5xl); line-height: var(--leading-none); }
 h2 { font-size: var(--text-4xl); line-height: var(--leading-tight); }
@@ -42,3 +47,25 @@ h4 { font-size: var(--text-2xl); line-height: var(--leading-snug); }
 h5 { font-size: var(--text-2xl); line-height: var(--leading-normal); }
 
 p { font-size: var(--text-base); line-height: var(--leading-relaxed); }
+
+/* 모든 페이지 공통: 섹션 라벨과 버튼 */
+.eyebrow { font-size: var(--text-sm); line-height: var(--leading-none); color: var(--color-point); font-weight: 700; letter-spacing: 0.08em; }
+
+.solid-link,
+.ghost-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; border-radius: 999px; padding: 0.875rem 1.5rem; }
+
+.solid-link { color: var(--color-surface); background-color: var(--color-point); margin-top: 1.5rem; transition: background-color 0.25s ease, transform 0.25s var(--ease-out), box-shadow 0.25s ease; }
+.solid-link:hover { background-color: var(--color-point-strong); transform: translateY(-0.125rem); box-shadow: 0 0.75rem 1.5rem rgb(49 86 217 / 0.25); }
+
+.ghost-link { color: var(--color-ink); border: 1px solid var(--color-line); background-color: var(--color-surface); transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s var(--ease-out); }
+.ghost-link:hover { color: var(--color-point); border-color: var(--color-point); transform: translateY(-0.125rem); }
+
+/* 스크롤 등장 애니메이션: JS가 켜진 경우에만 숨겼다가 화면에 들어오면 보여 줌 */
+.js [data-reveal] { opacity: 0; transform: translateY(1.5rem); transition: opacity 0.8s var(--ease-out) var(--reveal-delay, 0ms), transform 0.8s var(--ease-out) var(--reveal-delay, 0ms); }
+.js .principle-card[data-reveal],
+.js .ax-steps li[data-reveal] { transition: opacity 0.8s var(--ease-out) var(--reveal-delay, 0ms), transform 0.8s var(--ease-out) var(--reveal-delay, 0ms), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.js [data-reveal].is-revealed { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
