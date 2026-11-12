@@ -54,7 +54,7 @@ export function AboutMe() {
           <li>
             <span>02</span>
             <div>
-              <p>초안 <em>Claude · Codex</em></p>
+              <p>초안 <em>Claude</em></p>
               <strong>기능 단위로 코드 초안 작성</strong>
               <small>정리한 요구사항을 기능 단위로 나눠 초안을 만들고, 구현 선택지를 비교합니다.</small>
             </div>
@@ -62,9 +62,9 @@ export function AboutMe() {
           <li>
             <span>03</span>
             <div>
-              <p>검증 <em>직접</em></p>
-              <strong>리뷰와 예외 테스트</strong>
-              <small>타입·빌드 검사, 실제 화면 테스트로 AI가 놓친 예외를 찾아 고칩니다.</small>
+              <p>검증 <em>Codex · 직접</em></p>
+              <strong>다른 AI로 검증, 판단은 직접</strong>
+              <small>Codex로 lint·build·test와 diff를 대조하고, 실제 화면과 예외는 직접 확인합니다.</small>
             </div>
           </li>
         </ol>

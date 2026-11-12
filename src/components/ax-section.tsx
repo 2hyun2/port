@@ -10,15 +10,15 @@ const steps = [
   },
   {
     number: "02",
-    tool: "Claude · Codex",
+    tool: "Claude",
     title: "기능 단위로 초안을 빠르게",
     body: "요구사항을 기능 단위로 쪼개 초안을 만들고, 구현 선택지를 비교합니다. 반복적인 코드 작성 시간을 줄이고 설계에 더 많은 시간을 씁니다.",
   },
   {
     number: "03",
-    tool: "직접",
-    title: "리뷰와 예외 테스트로 마무리",
-    body: "타입·빌드 검사와 실제 화면 테스트로 AI가 놓친 예외를 찾습니다. 기존 구조와 데이터 흐름에 맞는지 확인한 코드만 반영합니다.",
+    tool: "Codex · 직접",
+    title: "다른 AI로 검증하고, 판단은 직접",
+    body: "작성한 AI가 아닌 Codex로 lint·build·test와 diff 대조를 돌리고, 실제 화면과 예외 상황은 직접 확인합니다. 기존 구조와 데이터 흐름에 맞는 코드만 반영합니다.",
   },
 ];
 
@@ -36,9 +36,11 @@ const cases = [
     linkLabel: "우리집 공간록 보기",
   },
   {
-    label: "규칙 설계",
-    title: "사실관계를 문서로 고정",
-    body: "프로젝트마다 확인된 사실과 과장하면 안 되는 표현을 규칙 문서로 관리해, AI가 확인되지 않은 수치나 경험을 만들어 내지 않게 했습니다.",
+    label: "협업 설계",
+    title: "작성하는 AI와 검증하는 AI를 분리",
+    body: "두 AI가 같은 파일을 번갈아 고치며 서로 덮어쓰는 문제가 생기자, Claude는 작성하고 Codex는 lint·build·test와 diff 대조로 검증하도록 역할을 나누고 그 이유를 결정 기록으로 남겼습니다.",
+    href: "https://github.com/2hyun2/storage-basket/blob/main/docs/%EA%B2%B0%EC%A0%95-%EA%B8%B0%EB%A1%9D.md",
+    linkLabel: "결정 기록 보기",
   },
 ];
 
@@ -69,7 +71,9 @@ export function AxSection() {
               <p className="ax-case-label">{item.label}</p>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
-              {item.href && <Link href={item.href}>{item.linkLabel} <span aria-hidden="true">→</span></Link>}
+              {item.href && (item.href.startsWith("http")
+                ? <a href={item.href} target="_blank" rel="noreferrer">{item.linkLabel} <span aria-hidden="true">↗</span></a>
+                : <Link href={item.href}>{item.linkLabel} <span aria-hidden="true">→</span></Link>)}
             </li>
           ))}
         </ul>

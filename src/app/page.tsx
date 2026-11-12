@@ -24,7 +24,7 @@ export default function Home() {
   // 기술이 아닌 연동 대상(ERP API 등)은 메인 목록에서 제외
   const hiddenStacks = new Set(["ERP API", "Cafe24 API"]);
   // 프론트엔드 핵심 기술을 앞에, 나머지는 프로젝트 순서대로
-  const leadingStacks = ["React", "TypeScript", "JavaScript", "TanStack Query", "Zustand", "Three.js", "React Three Fiber"];
+  const leadingStacks = ["React", "Next.js", "TypeScript", "JavaScript", "TanStack Query", "Zustand", "Zod", "Supabase", "Three.js", "React Three Fiber"];
   const usedStacks = [...new Set([...leadingStacks, ...projects.flatMap((project) => project.stack)])]
     .filter((stack) => !hiddenStacks.has(stack));
 
